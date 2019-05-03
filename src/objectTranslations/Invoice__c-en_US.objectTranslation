@@ -38,6 +38,10 @@
         <name>Net_Total__c</name>
     </fields>
     <fields>
+        <label><!-- Payment Terms --></label>
+        <name>Payment_Terms__c</name>
+    </fields>
+    <fields>
         <label><!-- Payment --></label>
         <name>Payment__c</name>
         <picklistValues>
@@ -89,6 +93,10 @@
             <masterLabel>Unpaid</masterLabel>
             <translation><!-- Unpaid --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- VAT Total --></label>
+        <name>VAT_Total__c</name>
     </fields>
     <layouts>
         <layout>Invoice Layout</layout>
