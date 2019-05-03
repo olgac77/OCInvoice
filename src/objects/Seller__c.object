@@ -153,5 +153,23 @@
     <pluralLabel>Sellers</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>BankAccountRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX( Bank_Account_Number__c , $CustomMetadata.Validation_Setting__mdt.Bank_Account.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide 26 digits of your bank account number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NIPRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX(NIP__c, $CustomMetadata.Validation_Setting__mdt.NIP.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide NIP value in format XXX-XXX-XX-XX</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PhoneRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX( Phone__c , $CustomMetadata.Validation_Setting__mdt.Phone.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide only digits</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

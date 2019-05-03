@@ -135,5 +135,11 @@
     <pluralLabel>Addresses</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>PostalCodeRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX( Postal_Code__c ,$CustomMetadata.Validation_Setting__mdt.Postal_Code.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide correct postal code</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
