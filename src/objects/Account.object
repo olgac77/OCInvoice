@@ -401,6 +401,24 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>NIPRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX(NIP__c , $CustomMetadata.Validation_Setting__mdt.NIP.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide NIP value in format XXX-XXX-XX-XX</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PhoneRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX(Phone , $CustomMetadata.Validation_Setting__mdt.Phone.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide only digits</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PostalCodeRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX( BillingPostalCode,  $CustomMetadata.Validation_Setting__mdt.Postal_Code.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide correct Billing Postal Code</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
         <availability>online</availability>

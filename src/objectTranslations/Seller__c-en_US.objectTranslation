@@ -41,4 +41,16 @@
         <name>SWIFT__c</name>
     </fields>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please provide 26 digits of your bank account number --></errorMessage>
+        <name>BankAccountRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide NIP value in format XXX-XXX-XX-XX --></errorMessage>
+        <name>NIPRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide only digits --></errorMessage>
+        <name>PhoneRule</name>
+    </validationRules>
 </CustomObjectTranslation>

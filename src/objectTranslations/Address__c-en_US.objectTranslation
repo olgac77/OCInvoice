@@ -41,4 +41,8 @@
         </sections>
     </layouts>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please provide correct postal code --></errorMessage>
+        <name>PostalCodeRule</name>
+    </validationRules>
 </CustomObjectTranslation>

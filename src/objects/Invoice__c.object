@@ -77,21 +77,22 @@
     <fields>
         <fullName>Due_Date__c</fullName>
         <externalId>false</externalId>
+        <formula>Issue_Date__c + Payment_Terms__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Due Date</label>
-        <precision>3</precision>
-        <required>true</required>
-        <scale>0</scale>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Gross_Total__c</fullName>
         <externalId>false</externalId>
+        <formula>Net_Total__c + VAT_Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Gross Total</label>
         <precision>18</precision>
-        <required>true</required>
+        <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -127,6 +128,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Payment__c</fullName>
@@ -200,7 +213,7 @@
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
-        <required>false</required>
+        <required>true</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -220,6 +233,17 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>VAT_Total__c</fullName>
+        <externalId>false</externalId>
+        <label>VAT Total</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <label>Invoice</label>
     <listViews>
