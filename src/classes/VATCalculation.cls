@@ -16,7 +16,7 @@ public with sharing class VATCalculation {
             }
         }
         List<Invoice__c> invoices = [SELECT Id, VAT_Total__c from Invoice__c WHERE Id = :invoiceWithVatMap.keySet()];
-        if(!(invoices.isEmpty()||invoices==null)){
+        if(!invoices.isEmpty()||invoices!=null){
             for (Invoice__c inv : invoices) {
                 if (invoiceWithVatMap.containsKey(inv.Id)) {
                     inv.VAT_Total__c = invoiceWithVatMap.get(inv.Id);
