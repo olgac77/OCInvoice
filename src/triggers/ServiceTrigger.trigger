@@ -4,7 +4,7 @@
 
 trigger ServiceTrigger on Service__c (after insert, after update, after delete) {
     if(Trigger.isAfter&&(Trigger.isInsert||Trigger.isUpdate||Trigger.isDelete)){
-        VATCalculation.CalculateVAT(Trigger.New);
+        VATCalculation.calculateVAT(Trigger.New);
     }
 
 
