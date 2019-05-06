@@ -3,22 +3,24 @@
  */
 
 public with sharing class VATCalculation {
-    public static void CalculateVAT(List <Service__c> ser) {
-        Set<Id> invoiceIdList = new Set<Id>();
 
+    public static void calculateVAT(List <Service__c> ser) {
+        Set<Id> invoiceIdList = new Set<Id>();
         for (Service__c s : ser) {
             invoiceIdList.add(s.Invoice__c);
         }
-
         Map<Id, Decimal> invoiceWithVatMap = new Map<Id, Decimal>();
-        for (AggregateResult ar : [SELECT SUM(VAT_Amount__c) sumAmount, Invoice__c FROM Service__c Where Invoice__c = :invoiceIdList GROUP BY Invoice__c]) {
-            invoiceWithVatMap.put((Id) ar.get('Invoice__c'), (Decimal) ar.get('sumAmount'));
+        for (AggregateResult ar : [SELECT SUM(VAT_Amount__c) sumAmount, Invoice__c FROM Service__c WHERE Invoice__c = :invoiceIdList GROUP BY Invoice__c]) {
+            if(ar.get('Invoice__c')!=null&&ar.get('sumAmount')!=null){
+                invoiceWithVatMap.put((Id) ar.get('Invoice__c'), (Decimal) ar.get('sumAmount'));
+            }
         }
-
         List<Invoice__c> invoices = [SELECT Id, VAT_Total__c from Invoice__c WHERE Id = :invoiceWithVatMap.keySet()];
-        for (Invoice__c inv : invoices) {
-            if (invoiceWithVatMap.containsKey(inv.Id)) {
-                inv.VAT_Total__c = invoiceWithVatMap.get(inv.Id);
+        if(!(invoices.isEmpty()||invoices==null)){
+            for (Invoice__c inv : invoices) {
+                if (invoiceWithVatMap.containsKey(inv.Id)) {
+                    inv.VAT_Total__c = invoiceWithVatMap.get(inv.Id);
+                }
             }
         }
         update invoices;
