@@ -47,10 +47,6 @@
                 <behavior>Edit</behavior>
                 <field>Amount_in_words__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Amount_ending__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

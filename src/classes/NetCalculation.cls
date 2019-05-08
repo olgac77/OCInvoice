@@ -22,7 +22,7 @@ public with sharing class NetCalculation {
                     inv.Net_Total__c = invoiceWithVatMap.get(inv.Id);
                 }
             }
+            update invoices;
         }
-        update invoices;
     }
 }

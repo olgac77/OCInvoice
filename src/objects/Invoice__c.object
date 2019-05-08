@@ -66,17 +66,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Amount_ending__c</fullName>
-        <externalId>false</externalId>
-        <label>Amount ending</label>
-        <length>7</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Amount_in_words__c</fullName>
         <externalId>false</externalId>
         <label>Amount in words</label>
