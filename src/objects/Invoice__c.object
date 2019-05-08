@@ -66,6 +66,28 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Amount_ending__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount ending</label>
+        <length>7</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_in_words__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount in words</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Delivery_Date__c</fullName>
         <externalId>false</externalId>
         <label>Delivery Date</label>
@@ -88,8 +110,6 @@
     <fields>
         <fullName>Gross_Total__c</fullName>
         <externalId>false</externalId>
-        <formula>Net_Total__c + VAT_Total__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Gross Total</label>
         <precision>18</precision>
         <required>false</required>
@@ -122,12 +142,12 @@
         <fullName>Net_Total__c</fullName>
         <externalId>false</externalId>
         <label>Net Total</label>
-        <summarizedField>Service__c.Net_Amount__c</summarizedField>
-        <summaryForeignKey>Service__c.Invoice__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Summary</type>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Payment_Terms__c</fullName>
@@ -239,7 +259,7 @@
         <externalId>false</externalId>
         <label>VAT Total</label>
         <precision>18</precision>
-        <required>true</required>
+        <required>false</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

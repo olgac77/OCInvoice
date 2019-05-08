@@ -57,8 +57,8 @@
         <externalId>false</externalId>
         <label>Value</label>
         <precision>18</precision>
-        <required>true</required>
-        <scale>0</scale>
+        <required>false</required>
+        <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
