@@ -93,15 +93,16 @@ public with sharing class AmountToText {
             zloty = zloty / 1000;
             g = g + 1;
         }
-        List<Currency_format__mdt> currencyFormat = [SELECT Currency__c, Currency_at_the_end__c FROM Currency_format__mdt];
+        String country=UserInfo.getLocale();
+        List<Currency_format__mdt> currencyFormat = [SELECT Currency__c, Currency_at_the_end__c FROM Currency_format__mdt WHERE Country__c=:country];
         if(!currencyFormat.isEmpty()||currencyFormat!=null){
-            for (Currency_format__mdt cur:currencyFormat){
-                if(!cur.Currency_at_the_end__c){
-                    inWords = sign + inWords + cur.Currency__c + ' ' + grs;
-                }
-                else{
+            for (Currency_format__mdt cur:currencyFormat) {
+                if (cur.Currency_at_the_end__c) {
                     inWords = sign + inWords + ' ' + grs + ' ' + cur.Currency__c;
+                    return inWords;
                 }
+                    inWords = sign + inWords + cur.Currency__c + ' ' + grs;
+                    return inWords;
             }
         }
         return inWords;
