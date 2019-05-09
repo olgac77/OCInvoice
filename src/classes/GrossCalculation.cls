@@ -21,7 +21,7 @@ public with sharing class GrossCalculation {
                     inv.Gross_Total__c = invoiceWithVatMap.get(inv.Id);
                 }
             }
+            update invoices;
         }
-        update invoices;
     }
 }

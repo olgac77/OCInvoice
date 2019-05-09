@@ -5,7 +5,7 @@ ServiceTriggerHandler handle = new ServiceTriggerHandler(trigger.new);
 
     if(Trigger.isAfter){
         if (trigger.isInsert) handle.afterInsert();
-        if(trigger.isUpdate) handle.afterUpdate();
-        if(trigger.isDelete) handle.afterDelete();
+        if (trigger.isUpdate) handle.afterUpdate();
+        if (trigger.isDelete) handle.afterDelete();
     }
 }

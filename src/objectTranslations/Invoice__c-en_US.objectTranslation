@@ -14,10 +14,6 @@
         <relationshipLabel><!-- Invoices --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Amount ending --></label>
-        <name>Amount_ending__c</name>
-    </fields>
-    <fields>
         <label><!-- Amount in words --></label>
         <name>Amount_in_words__c</name>
     </fields>

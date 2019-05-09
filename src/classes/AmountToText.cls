@@ -9,38 +9,31 @@ public with sharing class AmountToText {
         for (Service__c s : ser) {
             invoiceIdList.add(s.Invoice__c);
         }
-        String[] result = new String[2];
-        List<Invoice__c> invoices = [SELECT Id, Gross_Total__c, Amount_in_words__c, Amount_ending__c FROM Invoice__c WHERE Id = :invoiceIdList];
+        List<Invoice__c> invoices = [SELECT Id, Gross_Total__c, Amount_in_words__c FROM Invoice__c WHERE Id = :invoiceIdList];
         if(!invoices.isEmpty()||invoices!=null) {
             for (Invoice__C inv : invoices) {
-                System.debug('@@gr'+inv.Gross_Total__c);
-                result = Convert(inv.Gross_Total__c);
-                System.debug(result[0]+' ' +result[1]);
-                inv.Amount_in_words__c=result[0];
-                System.debug(inv.Amount_in_words__c);
-                inv.Amount_ending__c=result[1];
+                inv.Amount_in_words__c= Convert(inv.Gross_Total__c);
             }
+            update invoices;
         }
-        update invoices;
     }
 
-    public static String[] Convert(Decimal amount) {
-        String[] result = new String[2];
-        String[] singles = new String[]{'', 'jeden ', 'dwa ', 'trzy ', 'cztery ',
+    public static String Convert(Decimal amount) {
+        List<String> singles = new List <String>{'', 'jeden ', 'dwa ', 'trzy ', 'cztery ',
                 'pięć ', 'sześć ', 'siedem ', 'osiem ', 'dziewięć '};
 
-        String[] teens =new String[]{
+        List<String> teens =new List<String>{
                 '', 'jedenaście ', 'dwanaście ', 'trzynaście ',
                 'czternaście ', 'piętnaście ', 'szesnaście ', 'siedemnaście ',
                 'osiemnaście ', 'dziewiętnaście '};
 
-        String[] tens =new String[]{
+        List<String> tens =new List<String>{
                 '', 'dziesięć ', 'dwadzieścia ',
                 'trzydzieści ', 'czterdzieści ', 'pięćdziesiąt ',
                 'sześćdziesiąt ', 'siedemdziesiąt ', 'osiemdziesiąt ',
                 'dziewięćdziesiąt '};
 
-        String[] hundreds =new String[]{
+        List<String> hundreds =new List<String>{
                 '', 'sto ', 'dwieście ', 'trzysta ', 'czterysta ',
                 'pięćset ', 'sześćset ', 'siedemset ', 'osiemset ',
                 'dziewięćset '};
@@ -64,16 +57,13 @@ public with sharing class AmountToText {
             sign = 'zero';
         }
         String[] arr=String.valueOf(amount).split('\\.');
-        Integer zl = Integer.valueOf(arr[0]);
+        Integer zloty = Integer.valueOf(arr[0]);
         Integer gr = Integer.valueOf(arr[1]);
         String grs = String.valueOf(gr)+'/100';
-        System.debug(grs);
-        while(zl!=0){
-
-            s = math.mod(zl, 1000) / 100;
-            d = math.mod(zl,100) / 10;
-            j = math.mod(zl,10);
-
+        while(zloty!=0){
+            s = math.mod(zloty, 1000) / 100;
+            d = math.mod(zloty,100) / 10;
+            j = math.mod(zloty,10);
             if (d == 1 & j > 0) {
                 n = j;
                 d = 0;
@@ -83,7 +73,6 @@ public with sharing class AmountToText {
             }
             if (j == 1 & s + d + n == 0) {
                 k = 0;
-
                 if (s + d == 0 && g > 0) {
                     j = 0;
                     inWords = groups[(Integer) g][(Integer) k] + inWords;
@@ -97,18 +86,25 @@ public with sharing class AmountToText {
             } else {
                 k = 2;
             }
-            System.debug(s+' '+d+' '+j+' '+g+' '+k);
             if (s+d+n+j > 0) {
                 inWords = hundreds[(Integer) s] + tens[(Integer) d] + teens[(Integer) n]
                 + singles[(Integer) j] + groups[(Integer) g][(Integer) k] + inWords;
             }
-            zl = zl / 1000;
+            zloty = zloty / 1000;
             g = g + 1;
         }
-        inWords = sign + inWords;
-        result[0]=inWords;
-        result[1]=(grs);
-        System.debug(result);
-        return result;
+        String country=UserInfo.getLocale();
+        List<Currency_format__mdt> currencyFormat = [SELECT Currency__c, Currency_at_the_end__c FROM Currency_format__mdt WHERE Country__c=:country];
+        if(!currencyFormat.isEmpty()||currencyFormat!=null){
+            for (Currency_format__mdt cur:currencyFormat) {
+                if (cur.Currency_at_the_end__c) {
+                    inWords = sign + inWords + ' ' + grs + ' ' + cur.Currency__c;
+                    return inWords;
+                }
+                    inWords = sign + inWords + cur.Currency__c + ' ' + grs;
+                    return inWords;
+            }
+        }
+        return inWords;
     }
 }
