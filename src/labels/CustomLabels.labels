@@ -1,3 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata"/>
-
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AmountInWords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AmountInWords</shortDescription>
+        <value>Kwota słownie:</value>
+    </labels>
+    <labels>
+        <fullName>Authorized</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Authorized</shortDescription>
+        <value>Osoba upoważniona do odbioru</value>
+    </labels>
+    <labels>
+        <fullName>AuthorizedS</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AuthorizedS</shortDescription>
+        <value>Osoba upoważniona do wystawienia</value>
+    </labels>
+    <labels>
+        <fullName>Bank_account</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Bank account</shortDescription>
+        <value>Nr konta</value>
+    </labels>
+    <labels>
+        <fullName>Buyer</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Buyer</shortDescription>
+        <value>Nabywca</value>
+    </labels>
+    <labels>
+        <fullName>Date_of_issue</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Date of issue</shortDescription>
+        <value>Data wystawienia</value>
+    </labels>
+    <labels>
+        <fullName>Delivery_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Delivery date</shortDescription>
+        <value>Data sprzedaży/wykonania usługi</value>
+    </labels>
+    <labels>
+        <fullName>Discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Discount</shortDescription>
+        <value>Rabat %</value>
+    </labels>
+    <labels>
+        <fullName>Due_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Due date</shortDescription>
+        <value>Termin zapłaty</value>
+    </labels>
+    <labels>
+        <fullName>GrossAmount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>GrossAmount</shortDescription>
+        <value>Kwota brutto</value>
+    </labels>
+    <labels>
+        <fullName>Invoice</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Invoice</shortDescription>
+        <value>Faktura nr</value>
+    </labels>
+    <labels>
+        <fullName>Jm</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Unit</shortDescription>
+        <value>Jm</value>
+    </labels>
+    <labels>
+        <fullName>NIP</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NIP</shortDescription>
+        <value>NIP</value>
+    </labels>
+    <labels>
+        <fullName>Name_of_Service</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Name of Service</shortDescription>
+        <value>Nazwa towaru/usługi</value>
+    </labels>
+    <labels>
+        <fullName>NetAmount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NetAmount</shortDescription>
+        <value>Kwota netto</value>
+    </labels>
+    <labels>
+        <fullName>NetDiscount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NetDiscount</shortDescription>
+        <value>Cena netto po rabacie</value>
+    </labels>
+    <labels>
+        <fullName>Net_Amount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Net Price</shortDescription>
+        <value>Cena netto</value>
+    </labels>
+    <labels>
+        <fullName>Paid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Paid</shortDescription>
+        <value>Zapłacono</value>
+    </labels>
+    <labels>
+        <fullName>Pay</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pay</shortDescription>
+        <value>Do zapłaty</value>
+    </labels>
+    <labels>
+        <fullName>Payment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Payment</shortDescription>
+        <value>Sposób zapłaty</value>
+    </labels>
+    <labels>
+        <fullName>Phone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Phone</shortDescription>
+        <value>tel.</value>
+    </labels>
+    <labels>
+        <fullName>Place_of_Issue</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Place of Issue</shortDescription>
+        <value>Miejsce wystawienia</value>
+    </labels>
+    <labels>
+        <fullName>Quantity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Quantity</shortDescription>
+        <value>Ilość</value>
+    </labels>
+    <labels>
+        <fullName>Seller</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Seller</shortDescription>
+        <value>Sprzedawca</value>
+    </labels>
+    <labels>
+        <fullName>Signature</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Signature</shortDescription>
+        <value>Podpis</value>
+    </labels>
+    <labels>
+        <fullName>Street</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Street</shortDescription>
+        <value>ul.</value>
+    </labels>
+    <labels>
+        <fullName>Total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Total</shortDescription>
+        <value>Razem</value>
+    </labels>
+    <labels>
+        <fullName>VAT</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>VAT</shortDescription>
+        <value>VAT</value>
+    </labels>
+    <labels>
+        <fullName>VATAmount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>VATAmount</shortDescription>
+        <value>Kwota VAT</value>
+    </labels>
+    <labels>
+        <fullName>Way_of_payment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Way of payment</shortDescription>
+        <value>Sposób płatności</value>
+    </labels>
+    <labels>
+        <fullName>e_mail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>e-mail</shortDescription>
+        <value>e-mail</value>
+    </labels>
+</CustomLabels>

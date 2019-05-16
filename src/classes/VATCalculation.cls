@@ -1,7 +1,4 @@
 //Created by ociszek001 on 06.05.2019.
-
-
-
 public with sharing class VATCalculation {
 
     public static void calculateVAT(List <Service__c> ser) {

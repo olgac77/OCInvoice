@@ -9,12 +9,24 @@
         <value>Sellers</value>
     </caseValues>
     <fields>
+        <label><!-- Apt. No --></label>
+        <name>Apt_No__c</name>
+    </fields>
+    <fields>
         <label><!-- Bank Account Number --></label>
         <name>Bank_Account_Number__c</name>
     </fields>
     <fields>
         <label><!-- Bank Name --></label>
         <name>Bank_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
     </fields>
     <fields>
         <label><!-- E-mail --></label>
@@ -37,9 +49,28 @@
         <name>Phone__c</name>
     </fields>
     <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
         <label><!-- SWIFT --></label>
         <name>SWIFT__c</name>
     </fields>
+    <fields>
+        <label><!-- Street No --></label>
+        <name>Street_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <layouts>
+        <layout>Seller Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
     <validationRules>
         <errorMessage><!-- Please provide 26 digits of your bank account number --></errorMessage>
@@ -52,5 +83,9 @@
     <validationRules>
         <errorMessage><!-- Please provide only digits --></errorMessage>
         <name>PhoneRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide valid Postal Code (format XX-XXX) --></errorMessage>
+        <name>PostalCodeRule</name>
     </validationRules>
 </CustomObjectTranslation>

@@ -38,6 +38,10 @@
         <name>PKWIU__c</name>
     </fields>
     <fields>
+        <label><!-- Price after discount --></label>
+        <name>Price_after_discount__c</name>
+    </fields>
+    <fields>
         <label><!-- Quantity --></label>
         <name>Quantity__c</name>
     </fields>
