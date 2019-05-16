@@ -53,6 +53,17 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>Apt_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Apt. No</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Bank_Account_Number__c</fullName>
         <externalId>false</externalId>
         <label>Bank Account Number</label>
@@ -69,6 +80,28 @@
         <label>Bank Name</label>
         <length>30</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>250</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>250</length>
+        <required>true</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -128,11 +161,44 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>6</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>SWIFT__c</fullName>
         <externalId>false</externalId>
         <label>SWIFT</label>
         <length>8</length>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Street No</label>
+        <length>10</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>250</length>
+        <required>true</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -170,6 +236,12 @@
         <active>true</active>
         <errorConditionFormula>NOT(REGEX( Phone__c , $CustomMetadata.Validation_Setting__mdt.Phone.Value__c ))</errorConditionFormula>
         <errorMessage>Please provide only digits</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PostalCodeRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX( Postal_Code__c ,$CustomMetadata.Validation_Setting__mdt.Postal_Code.Value__c ))</errorConditionFormula>
+        <errorMessage>Please provide valid Postal Code (format XX-XXX)</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

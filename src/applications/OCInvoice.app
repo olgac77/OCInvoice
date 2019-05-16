@@ -13,7 +13,6 @@
     <tabs>standard-Account</tabs>
     <tabs>Service__c</tabs>
     <tabs>Invoice__c</tabs>
-    <tabs>Address__c</tabs>
     <tabs>VAT__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>OCInvoice_UtilityBar</utilityBar>
