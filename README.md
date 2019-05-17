@@ -1,1 +1,1 @@
-OCInvoice
+[![Build Status](https://travis-ci.org/olgac77/OCInvoice.svg?branch=DEV)](https://travis-ci.org/olgac77/OCInvoice)
