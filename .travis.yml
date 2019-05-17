@@ -1,5 +1,5 @@
 language: java
-script: ant -Dtest.level=NoTestRun test
+script: ant test
 env:
    global:
-      - SFURL=https://login.salesforce.com
+      - SFDC_URL=https://login.salesforce.com
