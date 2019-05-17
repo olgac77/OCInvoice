@@ -337,6 +337,9 @@
     <layoutAssignments>
         <layout>VAT__c-VAT Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Validation_Setting__mdt-Validation Setting Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>

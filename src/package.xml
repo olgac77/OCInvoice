@@ -14,7 +14,6 @@
   </types>
   <types>
     <members>Invoice</members>
-    <members>TestKB</members>
     <name>ApexPage</name>
   </types>
   <types>
@@ -120,7 +119,6 @@
     <members>Invoice__c.All</members>
     <members>Seller__c.All</members>
     <members>Service__c.All</members>
-    <members>User.AllUsers</members>
     <members>VAT__c.All</members>
     <name>ListView</name>
   </types>
@@ -129,7 +127,6 @@
     <name>PermissionSet</name>
   </types>
   <types>
-    <members>Admin</members>
     <members>OCInvoice User</members>
     <name>Profile</name>
   </types>
@@ -144,10 +141,6 @@
   <types>
     <members>OrgPreference</members>
     <name>Settings</name>
-  </types>
-  <types>
-    <members>pl</members>
-    <name>Translations</name>
   </types>
   <types>
     <members>Account.NIPRule</members>
