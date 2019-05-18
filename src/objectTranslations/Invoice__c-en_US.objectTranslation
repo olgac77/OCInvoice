@@ -110,4 +110,8 @@
         </sections>
     </layouts>
     <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Get_PDF --></label>
+        <name>Get_PDF</name>
+    </webLinks>
 </CustomObjectTranslation>
