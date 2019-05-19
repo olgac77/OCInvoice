@@ -152,5 +152,9 @@
     <members>Seller__c.PostalCodeRule</members>
     <name>ValidationRule</name>
   </types>
+  <types>
+    <members>Invoice__c.Get_PDF</members>
+    <name>WebLink</name>
+  </types>
   <version>45.0</version>
 </Package>
