@@ -12,7 +12,7 @@ public with sharing class InvoiceController {
     }
 
     public String getLogos(Id sellerId) {
-        if (sellerId != null) {
+        if (String.isNotBlank(sellerId)) {
             List<ContentDocumentLink> logoIds = [SELECT ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId = :sellerId];
             if (!logoIds.isEmpty()) {
                 String env = URL.getSalesforceBaseUrl().toExternalForm();
@@ -23,19 +23,18 @@ public with sharing class InvoiceController {
     }
 
     public Invoice__c getInvoice() {
-        String result = ApexPages.currentPage().getParameters().get('invId');
-        if (result != null) {
+        String invoiceId = ApexPages.currentPage().getParameters().get('invId');
+        if (String.isNotBlank(invoiceId)) {
             inv = [
                     SELECT Delivery_Date__c, Issue_Date__c, Issue_Place__c, Name, Seller__r.Company_Name__c,Account__r.NIP__c,Account__r.BillingStreet,Account__r.BillingCity,Account__r.BillingPostalCode,
                             Account__r.Name, Seller__r.NIP__c, Seller__r.Bank_Account_Number__c, Gross_Total__c,
                             Net_Total__c, VAT_Total__c, Amount_in_words__c, Seller__r.Street__c, Seller__r.Street_No__c, Seller__r.Postal_Code__c,
                             Seller__r.City__c, Seller__r.Apt_No__c, Payment__c, Payment_Terms__c, Due_Date__c,Status__c, (SELECT Name_of_Service__c, Price_after_discount__c, Quantity__c, Unit__c, Net_Price__c, Discount__c, Net_Amount__c, VAT__r.Name, VAT_Amount__C, Gross_Amount__c FROM Services__r)
                     FROM Invoice__c
-                    WHERE Id = :result
+                    WHERE Id = :invoiceId
             ];
             return inv;
         }
-        Invoice__c inv = new Invoice__c();
-        return inv;
+        return new Invoice__c();
     }
 }
