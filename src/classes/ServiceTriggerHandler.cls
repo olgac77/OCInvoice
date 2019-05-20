@@ -30,4 +30,13 @@ public with sharing class ServiceTriggerHandler {
         GrossCalculation.calculateGross(newRecords);
         AmountToText.showAmountAsText(newRecords);
     }
+    public void beforeInsert() {
+        ServiceValidation.validateService(newRecords);
+    }
+    public void beforeUpdate() {
+        ServiceValidation.validateService(newRecords);
+    }
+    public void beforeDelete() {
+        ServiceValidation.validateService(newRecords);
+    }
 }

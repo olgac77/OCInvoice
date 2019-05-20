@@ -108,8 +108,16 @@
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
+        <sections>
+            <label><!-- Payment Terms --></label>
+            <section>Payment Terms</section>
+        </sections>
     </layouts>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Saving changes is not permitted. Invoice is in &apos;Paid&apos; status --></errorMessage>
+        <name>Do_not_edit</name>
+    </validationRules>
     <webLinks>
         <label><!-- Get_PDF --></label>
         <name>Get_PDF</name>

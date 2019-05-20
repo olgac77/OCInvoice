@@ -57,16 +57,18 @@
         <externalId>false</externalId>
         <label>Value</label>
         <precision>18</precision>
-        <required>false</required>
+        <required>true</required>
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
-        <unique>false</unique>
+        <unique>true</unique>
     </fields>
     <label>VAT</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Value__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -76,7 +78,13 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>VATs</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <searchResultsAdditionalFields>Value__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

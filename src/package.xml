@@ -112,6 +112,7 @@
     <members>Service__c-Service Layout</members>
     <members>Validation_Setting__mdt-Validation Setting Layout</members>
     <members>VAT__c-VAT Layout</members>
+    <members>Account-Account_OCInvoice Layout</members>
     <name>Layout</name>
   </types>
   <types>
@@ -150,6 +151,7 @@
     <members>Seller__c.NIPRule</members>
     <members>Seller__c.PhoneRule</members>
     <members>Seller__c.PostalCodeRule</members>
+    <members>Invoice__c.Do_not_edit</members>
     <name>ValidationRule</name>
   </types>
   <types>
