@@ -113,7 +113,7 @@
     <members>Service__c-Service Layout</members>
     <members>Validation_Setting__mdt-Validation Setting Layout</members>
     <members>VAT__c-VAT Layout</members>
-    <members>Account_OCInvoice</members>
+    <members>Account-Account_OCInvoice</members>
     <name>Layout</name>
   </types>
   <types>
