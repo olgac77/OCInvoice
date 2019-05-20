@@ -17,5 +17,4 @@ public with sharing class ServiceValidation {
             }
         }
     }
-
 }
