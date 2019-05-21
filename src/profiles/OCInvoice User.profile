@@ -11,11 +11,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ContentNumberValidation</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ContentTriggerHandler</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>GrossCalculation</apexClass>
@@ -31,7 +31,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>OCInvoiceException</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ServiceTriggerHandler</apexClass>
@@ -39,7 +39,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ServiceValidation</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>VATCalculation</apexClass>
@@ -371,7 +371,7 @@
     </objectPermissions>
     <pageAccesses>
         <apexPage>Invoice</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <tabVisibilities>
         <tab>Invoice__c</tab>
