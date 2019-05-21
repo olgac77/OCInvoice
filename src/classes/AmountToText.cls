@@ -10,7 +10,7 @@ public with sharing class AmountToText {
             invoiceIdList.add(s.Invoice__c);
         }
         List<Invoice__c> invoices = [SELECT Id, Gross_Total__c, Amount_in_words__c FROM Invoice__c WHERE Id = :invoiceIdList];
-        if(!invoices.isEmpty()||invoices!=null) {
+        if(invoices!=null||!invoices.isEmpty()) {
             for (Invoice__C inv : invoices) {
                 inv.Amount_in_words__c= Convert(inv.Gross_Total__c);
             }
@@ -95,7 +95,7 @@ public with sharing class AmountToText {
         }
         String country=UserInfo.getLocale();
         List<Currency_format__mdt> currencyFormat = [SELECT Currency__c, Currency_at_the_end__c FROM Currency_format__mdt WHERE Country__c=:country];
-        if(!currencyFormat.isEmpty()||currencyFormat!=null){
+        if(currencyFormat!=null||!currencyFormat.isEmpty()){
             for (Currency_format__mdt cur:currencyFormat) {
                 if (cur.Currency_at_the_end__c) {
                     inWords = sign + inWords + ' ' + grs + ' ' + cur.Currency__c;

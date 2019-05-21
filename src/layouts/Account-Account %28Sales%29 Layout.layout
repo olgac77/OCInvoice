@@ -431,6 +431,9 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Seller__c</fields>
+        <fields>Due_Date__c</fields>
+        <fields>Status__c</fields>
         <relatedList>Invoice__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>

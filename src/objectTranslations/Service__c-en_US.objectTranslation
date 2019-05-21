@@ -92,6 +92,14 @@
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
+        <sections>
+            <label><!-- Invoice --></label>
+            <section>Invoice</section>
+        </sections>
+        <sections>
+            <label><!-- Service details --></label>
+            <section>Service details</section>
+        </sections>
     </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

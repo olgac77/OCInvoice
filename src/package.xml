@@ -10,6 +10,7 @@
     <members>OCInvoiceException</members>
     <members>ServiceTriggerHandler</members>
     <members>VATCalculation</members>
+    <members>ServiceValidation</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -112,6 +113,7 @@
     <members>Service__c-Service Layout</members>
     <members>Validation_Setting__mdt-Validation Setting Layout</members>
     <members>VAT__c-VAT Layout</members>
+    <members>Account-Account_OCInvoice</members>
     <name>Layout</name>
   </types>
   <types>
@@ -121,10 +123,6 @@
     <members>Service__c.All</members>
     <members>VAT__c.All</members>
     <name>ListView</name>
-  </types>
-  <types>
-    <members>OCInvoice_User</members>
-    <name>PermissionSet</name>
   </types>
   <types>
     <members>OCInvoice User</members>
@@ -150,6 +148,7 @@
     <members>Seller__c.NIPRule</members>
     <members>Seller__c.PhoneRule</members>
     <members>Seller__c.PostalCodeRule</members>
+    <members>Invoice__c.Do_not_edit</members>
     <name>ValidationRule</name>
   </types>
   <types>

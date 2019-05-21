@@ -11,11 +11,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ContentNumberValidation</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ContentTriggerHandler</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>GrossCalculation</apexClass>
@@ -31,10 +31,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>OCInvoiceException</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ServiceTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ServiceValidation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -229,11 +233,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Invoice__c.Account__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Invoice__c.Amount_in_words__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -274,11 +273,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Seller__c.Phone__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Seller__c.SWIFT__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -312,18 +306,8 @@
         <field>Service__c.VAT_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Service__c.VAT__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>VAT__c.Value__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <layoutAssignments>
-        <layout>Account-Account Layout</layout>
+        <layout>Account-Account_OCInvoice</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Invoice__c-Invoice Layout</layout>
@@ -387,7 +371,7 @@
     </objectPermissions>
     <pageAccesses>
         <apexPage>Invoice</apexPage>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </pageAccesses>
     <tabVisibilities>
         <tab>Invoice__c</tab>

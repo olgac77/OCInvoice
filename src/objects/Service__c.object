@@ -54,6 +54,7 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Discount__c</fullName>
+        <defaultValue>0</defaultValue>
         <externalId>false</externalId>
         <label>Discount</label>
         <precision>18</precision>
@@ -232,7 +233,7 @@
         <referenceTo>VAT__c</referenceTo>
         <relationshipLabel>Services</relationshipLabel>
         <relationshipName>Services</relationshipName>
-        <required>false</required>
+        <required>true</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
@@ -240,6 +241,9 @@
     <label>Service</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Name_of_Service__c</columns>
+        <columns>Invoice__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -250,7 +254,16 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Services</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <customTabListAdditionalFields>Name_of_Service__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Invoice__c</customTabListAdditionalFields>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <searchResultsAdditionalFields>Name_of_Service__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Invoice__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

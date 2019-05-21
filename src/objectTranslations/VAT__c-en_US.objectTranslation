@@ -12,5 +12,12 @@
         <label><!-- Value --></label>
         <name>Value__c</name>
     </fields>
+    <layouts>
+        <layout>VAT Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

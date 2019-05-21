@@ -16,7 +16,7 @@ public with sharing class NetCalculation {
             }
         }
         List<Invoice__c> invoices = [SELECT Id, Net_Total__c from Invoice__c WHERE Id = :invoiceWithVatMap.keySet()];
-        if(!invoices.isEmpty()||invoices!=null){
+        if(invoices!=null||!invoices.isEmpty()){
             for (Invoice__c inv : invoices) {
                 if (invoiceWithVatMap.containsKey(inv.Id)) {
                     inv.Net_Total__c = invoiceWithVatMap.get(inv.Id);
