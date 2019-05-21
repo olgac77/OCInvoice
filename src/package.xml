@@ -125,10 +125,6 @@
     <name>ListView</name>
   </types>
   <types>
-    <members>OCInvoice_User</members>
-    <name>PermissionSet</name>
-  </types>
-  <types>
     <members>OCInvoice User</members>
     <name>Profile</name>
   </types>
