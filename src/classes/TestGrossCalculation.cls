@@ -6,9 +6,9 @@ private class TestGrossCalculation {
 
     @TestSetup
     static void loadData() {
-        User u = TestDataClass.insertUser();
+        List<User> u = TestDataClass.insertUser();
         List<Invoice__c> inv = new List<Invoice__c>();
-        System.runAs(u) {
+        System.runAs(u.get(0)) {
             Test.startTest();
             VAT__c vat = TestDataClass.insertVat();
             inv = TestDataClass.loadInvoices();
@@ -21,10 +21,10 @@ private class TestGrossCalculation {
     }
 
     @isTest
-    static void grossAfterInsert() {
+    static void TestGrossAfterInsert() {
         List<Invoice__c> inv = [SELECT Id, Gross_Total__c FROM Invoice__c];
-        User u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+        List<User> u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             Test.startTest();
             List<Service__c> ser = [SELECT Id, Invoice__c,Gross_Amount__c from Service__c WHERE Invoice__c = :inv.get(0).Id];
             Test.stopTest();
@@ -35,10 +35,10 @@ private class TestGrossCalculation {
     }
 
     @isTest
-    static void grossAfterUpdate() {
+    static void TestGrossAfterUpdate() {
         List<Invoice__c> inv = [SELECT Id, Gross_Total__c FROM Invoice__c];
-        User u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+        List<User> u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             Test.startTest();
             List<Service__c> ser = [SELECT Id, Invoice__c,Net_Price__c from Service__c WHERE Invoice__c = :inv.get(0).Id];
             for (Service__c s : ser) {
@@ -53,12 +53,12 @@ private class TestGrossCalculation {
     }
 
     @isTest
-    static void grossAfterDelete() {
+    static void TestGrossAfterDelete() {
         List<Invoice__c> invoicesBeforeDelete = new List<Invoice__c>();
         List<Service__c> serBeforeDelete = new List<Service__c>();
         List<Invoice__c> inv = new List <Invoice__c>();
-        User u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+        List<User> u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             Test.startTest();
             serBeforeDelete = [SELECT Id, Invoice__c,Net_Price__c, Gross_Amount__c from Service__c LIMIT 1];
             invoicesBeforeDelete = [SELECT Id, Gross_Total__c FROM Invoice__c WHERE id = :serBeforeDelete.get(0).Invoice__c];

@@ -5,14 +5,15 @@
 private class TestServiceValidation {
 
     @TestSetup
-    static void loadInvoices() {
-        User u = TestDataClass.insertUser();
+    static void loadData() {
+       List<User> u = TestDataClass.insertUser();
         List<Invoice__c> inv = new List<Invoice__c>();
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+                System.runAs(u.get(0)) {
             Test.startTest();
             VAT__c vat = TestDataClass.insertVat();
             inv = TestDataClass.loadInvoices();
-            List<Service__c> ser = TestDataClass.insertServices(new List<VAT__c>{
+            ser = TestDataClass.insertServices(new List<VAT__c>{
                     vat
             }, inv);
             Test.stopTest();
@@ -21,10 +22,10 @@ private class TestServiceValidation {
     }
 
     @isTest
-    static void TestUnpaidStatus() {
-        User u = [SELECT Id from User WHERE Username = :TestDataClass.userName];
+    static void testUnpaidStatus() {
+        List<User> u = [SELECT Id from User WHERE Username = :TestDataClass.userName];
         List <Service__c> ser = new List<Service__c>();
-        System.runAs(u) {
+        System.runAs(u.get(0)) {
             ser = [SELECT Net_Price__c FROM Service__c LIMIT 1];
             Test.startTest();
             ser.get(0).Net_Price__c = 3000;
@@ -37,9 +38,9 @@ private class TestServiceValidation {
     }
 
     @isTest
-    static void TestPaidStatusUpdate() {
-        User u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+    static void testPaidStatusUpdate() {
+        List<User> u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             Invoice__c invoice = [SELECT Id, Status__c FROM Invoice__c LIMIT 1];
             invoice.Status__c = 'Paid';
             Test.startTest();
@@ -55,9 +56,9 @@ private class TestServiceValidation {
         }
     }
     @isTest
-    static void TestPaidStatusAdd() {
-        User u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+    static void testPaidStatusAdd() {
+        List<User> u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             Invoice__c invoice = [SELECT Id, Status__c FROM Invoice__c LIMIT 1];
             invoice.Status__c = 'Paid';
             VAT__c vat = [SELECT Id from VAT__c LIMIT 1];
@@ -76,9 +77,9 @@ private class TestServiceValidation {
     }
 
     @isTest
-    static void TestPaidStatusDelete() {
-        User u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+    static void testPaidStatusDelete() {
+        List<User> u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             List<Invoice__c> invoice = [SELECT Id, Status__c FROM Invoice__c LIMIT 1];
             invoice.get(0).Status__c = 'Paid';
             Test.startTest();
@@ -95,10 +96,10 @@ private class TestServiceValidation {
     }
 
     @isTest
-    static void serviceUpdate() {
-        User u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
+    static void testServiceUpdate() {
+        List<User> u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
         List <Service__c> ser = new List <Service__c>();
-        System.runAs(u) {
+        System.runAs(u.get(0)) {
             ser = [SELECT Id, Net_Price__c, Invoice__c FROM Service__c LIMIT 1];
             ser.get(0).Net_Price__c = 0;
             Test.startTest();
@@ -110,16 +111,16 @@ private class TestServiceValidation {
     }
 
     @isTest
-    static void serviceDelete() {
-        User u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
-        List<Service__c> services = new List<Service__c>();
-        System.runAs(u) {
-            List<Service__c> ser = [SELECT ID from Service__c];
+    static void testServiceDelete() {
+        List<User> u = [SELECT Id from User WHERE UserName = :TestDataClass.userName];
+        List<Service__c> ser = new List<Service__c>();
+        System.runAs(u.get(0)) {
+           ser = [SELECT ID from Service__c];
             Test.startTest();
             delete ser;
             Test.stopTest();
-            services = [SELECT Id, Net_Price__c from Service__c];
+            ser = [SELECT Id, Net_Price__c from Service__c];
         }
-        System.assertEquals(true, services.isEmpty());
+        System.assertEquals(true, ser.isEmpty());
     }
 }

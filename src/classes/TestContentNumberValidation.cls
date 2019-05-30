@@ -5,14 +5,15 @@
 private class TestContentNumberValidation {
 
     @TestSetup
-    static void loadInvoices() {
-        User u = TestDataClass.insertUser();
+    static void loadData() {
+        List<User> u = TestDataClass.insertUser();
         List<Invoice__c> inv = new List<Invoice__c>();
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+        System.runAs(u.get(0)) {
             Test.startTest();
             VAT__c vat = TestDataClass.insertVat();
             inv = TestDataClass.loadInvoices();
-            List<Service__c> ser = TestDataClass.insertServices(new List<VAT__c>{
+            ser = TestDataClass.insertServices(new List<VAT__c>{
                     vat
             }, inv);
             Test.stopTest();
@@ -21,12 +22,12 @@ private class TestContentNumberValidation {
     }
 
     @isTest
-    static void insertContentPositive() {
-        User u = [SELECT Id FROM User WHERE UserName = 'devkama23052019@test.com'];
+    static void testInsertContentPositive() {
+        List<User> u = [SELECT Id FROM User WHERE UserName = 'devkama23052019@test.com'];
         Account acc = new Account(Name = 'TestTest', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542');
         List<AggregateResult> ar = new List<AggregateResult>();
         ContentDocumentLink cdl = new ContentDocumentLink();
-        System.runAs(u) {
+        System.runAs(u.get(0)) {
             Test.startTest();
             insert acc;
             ContentVersion contentVersion = new ContentVersion(
@@ -50,7 +51,7 @@ private class TestContentNumberValidation {
     }
 
     @isTest
-    static void insertContentNegative() {
+    static void testInsertContentNegative() {
         ContentDocumentLink cdlFirst = TestDataClass.insertContent();
         ContentVersion contentVersion = new ContentVersion(
                 Title = 'Test2',

@@ -5,14 +5,15 @@
 private class TestVATCalculation {
 
     @TestSetup
-    static void loadInvoices() {
-        User u = TestDataClass.insertUser();
+    static void loadData() {
+        List<User> u = TestDataClass.insertUser();
         List<Invoice__c> inv = new List<Invoice__c>();
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+                System.runAs(u.get(0)) {
             Test.startTest();
             VAT__c vat = TestDataClass.insertVat();
             inv = TestDataClass.loadInvoices();
-            List<Service__c> ser = TestDataClass.insertServices(new List<VAT__c>{
+            ser = TestDataClass.insertServices(new List<VAT__c>{
                     vat
             }, inv);
             Test.stopTest();
@@ -21,14 +22,13 @@ private class TestVATCalculation {
     }
 
     @isTest
-    static void VATAfterDelete() {
-        User u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
+    static void testVATAfterDelete() {
+        List<User> u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
         Invoice__c inv = new Invoice__c();
         List<Service__c> ser = [SELECT Id, Invoice__c FROM Service__c];
-        System.runAs(u) {
+        System.runAs(u.get(0)) {
             Test.startTest();
             delete ser;
-            List<Service__c> serAfter = [SELECT Id, Invoice__c FROM Service__c];
             inv = [SELECT Id, VAT_Total__c FROM Invoice__c LIMIT 1];
             Test.stopTest();
         }
@@ -36,12 +36,13 @@ private class TestVATCalculation {
     }
 
     @isTest
-    static void VATAfterUpdate() {
+    static void testVATAfterUpdate() {
         List<Invoice__c> inv = [SELECT Id, Gross_Total__c FROM Invoice__c];
-        User u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+        List<User> u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             Test.startTest();
-            List<Service__c> ser = [SELECT Id, Invoice__c,Net_Price__c from Service__c WHERE Invoice__c = :inv.get(0).Id];
+            ser = [SELECT Id, Invoice__c,Net_Price__c from Service__c WHERE Invoice__c = :inv.get(0).Id];
             for (Service__c s : ser) {
                 s.Net_Price__c = 0;
             }
@@ -54,14 +55,13 @@ private class TestVATCalculation {
     }
 
     @isTest
-    static void grossAfterInsert() {
+    static void testVATAfterInsert() {
         List<Invoice__c> inv = [SELECT Id, Gross_Total__c FROM Invoice__c];
-        User u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
-        System.runAs(u) {
+       List<User> u = [SELECT Id FROM User WHERE UserName = :TestDataClass.userName];
+        System.runAs(u.get(0)) {
             Test.startTest();
-            List<Service__c> ser = [SELECT Id, Invoice__c,VAT_Amount__c from Service__c WHERE Invoice__c = :inv.get(0).Id];
-            Test.stopTest();
             inv = [SELECT Id, VAT_Total__c FROM Invoice__c];
+            Test.stopTest();
         }
         System.assertEquals(false, inv.isEmpty());
         System.assertEquals(115, inv.get(0).VAT_Total__c);

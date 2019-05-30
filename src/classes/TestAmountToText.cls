@@ -5,27 +5,30 @@
 private class TestAmountToText {
 
     @TestSetup
-    static void loadInvoices() {
-        User u = TestDataClass.insertUser();
+    static void loadData() {
+        List<User> u = TestDataClass.insertUser();
         List<Invoice__c> inv = new List<Invoice__c>();
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+        System.runAs(u.get(0)) {
             Test.startTest();
             VAT__c vat = TestDataClass.insertVat();
             inv = TestDataClass.loadInvoices();
-            List<Service__c> ser = TestDataClass.insertServices(new List<VAT__c>{
+            ser = TestDataClass.insertServices(new List<VAT__c>{
                     vat
             }, inv);
             Test.stopTest();
         }
         System.assertEquals(false, inv.isEmpty());
+        System.assertEquals(false,inv.isEmpty());
     }
     @isTest
-    static void TestAmountToText() {
-        User u = [SELECT Id from User WHERE userName = :TestDataClass.userName];
+    static void testAmountToText() {
+        List<User> u = [SELECT Id from User WHERE userName = :TestDataClass.userName];
         List<Invoice__c> inv = new List <Invoice__c>();
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+        System.runAs(u.get(0)) {
             Test.startTest();
-            List<Service__c> ser = [SELECT Id, Invoice__c, Net_Price__c from Service__c];
+            ser = [SELECT Id, Invoice__c, Net_Price__c from Service__c];
             inv = [SELECT Amount_in_words__c,Gross_Total__c, (Select Id, Net_Price__c from Services__r) FROM Invoice__c WHERE id = :ser.get(0).Invoice__c];
             Test.stopTest();
         }
@@ -34,12 +37,13 @@ private class TestAmountToText {
     }
 
     @isTest
-    static void TestAmount0toText() {
-        User u = [SELECT Id from User WHERE Username = :TestDataClass.userName];
+    static void testAmount0toText() {
+        List<User> u = [SELECT Id from User WHERE Username = :TestDataClass.userName];
         List<Invoice__c> inv = new List <Invoice__c>();
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+        System.runAs(u.get(0)) {
             Test.startTest();
-            List<Service__c> ser = [SELECT Id, Net_Price__c, Invoice__c FROM Service__c];
+            ser = [SELECT Id, Net_Price__c, Invoice__c FROM Service__c];
             for (Service__c s : ser) {
                 s.Net_Price__c = 0;
             }
@@ -54,11 +58,12 @@ private class TestAmountToText {
 
     @isTest
     static void testNegativeAmountToText() {
-        User u = [SELECT Id from User WHERE Alias = 'newuser'];
+        List<User> u = [SELECT Id from User WHERE Alias = 'newuser'];
         List<Invoice__c> inv = new List <Invoice__c>();
-        System.runAs(u) {
+        List<Service__c> ser = new List<Service__c>();
+        System.runAs(u.get(0)) {
             Test.startTest();
-            List<Service__c> ser = [SELECT Id, Invoice__c, Net_Price__c FROM Service__c];
+            ser = [SELECT Id, Invoice__c, Net_Price__c FROM Service__c];
             for (Service__c s : ser) {
                 s.Net_Price__c = -1256060;
             }

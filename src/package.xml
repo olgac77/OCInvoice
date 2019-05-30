@@ -149,6 +149,10 @@
     <name>Settings</name>
   </types>
   <types>
+    <members>TestData</members>
+    <name>StaticResource</name>
+  </types>
+  <types>
     <members>Account.NIPRule</members>
     <members>Account.PhoneRule</members>
     <members>Account.PostalCodeRule</members>

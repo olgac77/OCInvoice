@@ -5,11 +5,11 @@
 public with sharing class TestDataClass {
     public static final String userName = 'devkama23052019@test.com';
 
-
     public static List<Invoice__c> loadInvoices() {
         List<sObject>inv = Test.loadData(Invoice__c.getSObjectType(), 'TestData');
         return inv;
     }
+
     public static List <Service__c> insertServices(List<VAT__c> vats, List<Invoice__c> invoices) {
         List<Service__c> services = new List <Service__c>();
         for (Invoice__c ic : invoices) {
@@ -49,13 +49,23 @@ public with sharing class TestDataClass {
         return cdl;
     }
 
-    public static User insertUser() {
+    public static List<User> insertUser() {
         Profile p = [SELECT Id FROM Profile WHERE Name = 'OCInvoice User'];
-        User u = new User(Alias = 'newUser', Email = 'newuser@testorg.com',
+        List<User> u = new List<User>{new User (Alias = 'newUser', Email = 'newuser@testorg.com',
                 EmailEncodingKey = 'UTF-8', LastName = 'Testing', LanguageLocaleKey = 'pl',
                 LocaleSidKey = 'pl_PL', ProfileId = p.Id,
-                TimeZoneSidKey = 'Europe/Prague', UserName = userName);
+                TimeZoneSidKey = 'Europe/Prague', UserName = userName)};
         insert u;
         return u;
+    }
+
+    public static ContentVersion insertContentVersion(){
+        ContentVersion contentVersion = new ContentVersion(
+                Title = 'Test',
+                PathOnClient = 'Test.jpg',
+                VersionData = Blob.valueOf('Test Content'),
+                IsMajorVersion = true
+        );
+                return contentVersion;
     }
 }

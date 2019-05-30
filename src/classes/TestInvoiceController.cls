@@ -5,10 +5,10 @@
 @IsTest
 private class TestInvoiceController {
     @TestSetup
-    static void loadInvoices() {
-        User u = TestDataClass.insertUser();
+    static void loadData() {
+        List<User> u = TestDataClass.insertUser();
         List<Invoice__c> inv = new List<Invoice__c>();
-        System.runAs(u) {
+        System.runAs(u.get(0)) {
             Test.startTest();
             VAT__c vat = TestDataClass.insertVat();
             inv = TestDataClass.loadInvoices();
@@ -22,11 +22,12 @@ private class TestInvoiceController {
 
     @isTest
     static void testGetInvoice() {
-        User u = [SELECT Id from User where Username = :TestDataClass.userName];
+        List<User> u = [SELECT Id from User where Username = :TestDataClass.userName];
         Invoice__c invoice = new Invoice__c();
-        System.runAs(u) {
+        List<Invoice__c> inv = new List<Invoice__c>();
+        System.runAs(u.get(0)) {
             Test.startTest();
-            List<Invoice__c> inv = [SELECT Id from Invoice__c LIMIT 1];
+            inv = [SELECT Id from Invoice__c LIMIT 1];
             PageReference invoicePage = Page.Invoice;
             Test.setCurrentPage(invoicePage);
             ApexPages.currentPage().getParameters().put('invId', inv.get(0).Id);
@@ -39,18 +40,13 @@ private class TestInvoiceController {
 
     @isTest
     static void testGetLogos() {
-        User u = [SELECT Id from User where Username = :TestDataClass.userName];
+        List<User> u = [SELECT Id from User where Username = :TestDataClass.userName];
         ContentDocumentLink cdl = new ContentDocumentLink();
         Test.startTest();
         Account acc = new Account(Name = 'TestTest4', NIP__c = '115-111-11-11', Phone = '113', BillingPostalCode = '12-542');
         insert acc;
-        ContentVersion contentVersion = new ContentVersion(
-                Title = 'Test',
-                PathOnClient = 'Test.jpg',
-                VersionData = Blob.valueOf('Test Content'),
-                IsMajorVersion = true
-        );
-        insert contentVersion;
+        ContentVersion cv = TestDataClass.insertContentVersion();
+        insert cv;
         List<ContentDocument> documents = [SELECT Id, Title, LatestPublishedVersionId FROM ContentDocument];
         cdl = New ContentDocumentLink();
         cdl.LinkedEntityId = acc.id;
@@ -59,10 +55,12 @@ private class TestInvoiceController {
         insert cdl;
         Test.stopTest();
         String logoURL;
-        System.runAs(u) {
+        String env;
+        System.runAs(u.get(0)) {
             InvoiceController invC = new InvoiceController();
             logoURL = invC.getLogos(acc.Id);
+            env = URL.getSalesforceBaseUrl().toExternalForm();
         }
-        System.assertEquals('https://eu26.salesforce.com/sfc/servlet.shepherd/document/download/' + cdl.ContentDocumentId, logoURL);
+        System.assertEquals(env + '/sfc/servlet.shepherd/document/download/' + cdl.ContentDocumentId, logoURL);
     }
 }
