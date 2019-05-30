@@ -19,7 +19,7 @@
 			pollWaitMillis = "${sf.maxWaitMillis}"
 			deployRoot="src" 
 			checkOnly="${check.only}" 
-			testlevel="{test.level}" 
+			testlevel="${test.level}" 
 			rollbackOnError="true"
 		/>
     </target>
