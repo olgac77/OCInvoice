@@ -11,6 +11,14 @@
     <members>ServiceTriggerHandler</members>
     <members>VATCalculation</members>
     <members>ServiceValidation</members>
+    <members>TestServiceValidation</members>
+    <members>TestAmountToText</members>
+    <members>TestDataClass</members>
+    <members>TestGrossCalculation</members>
+    <members>TestInvoiceController</members>
+    <members>TestNetCalculation</members>
+    <members>TestVATCalculation</members>
+    <members>TestContentNumberValidation</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -139,6 +147,10 @@
   <types>
     <members>OrgPreference</members>
     <name>Settings</name>
+  </types>
+  <types>
+    <members>TestData</members>
+    <name>StaticResource</name>
   </types>
   <types>
     <members>Account.NIPRule</members>

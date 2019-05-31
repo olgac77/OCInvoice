@@ -12,7 +12,7 @@ public with sharing class ContentNumberValidation {
         }
         for (Id sId : sellerIdList) {
             for (AggregateResult ar : [SELECT COUNT(ContentDocumentId) cdlcount from ContentDocumentLink WHERE LinkedEntityId = :sId]) {
-                if (Integer.Valueof(ar.get('cdlcount')) == 1) {
+                if (Integer.valueOf(ar.get('cdlcount')) == 1) {
                     throw new OCInvoiceException('Cannot add file');
                 }
             }
