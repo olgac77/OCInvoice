@@ -7,22 +7,20 @@
     <property name="sf.serverurl"     value="${env.SFDC_URL}"/>
     <property name="sf.maxPoll"       value="500"/>
     <property name="sf.maxWaitMillis" value="3000"/>
-    <property name="test.level"       value="NoTestRun"/>
+    <property name="test.level"       value="RunLocalTests"/>
     <property name="check.only"       value="true"/>
-    <property name="log.type"         value="None"/>
 
-    <target name="test">
-      <sf:deploy
-          username       = "${sf.username}"
-          password       = "${sf.password}"
-          serverurl      = "${sf.serverurl}"
-          deployRoot     = "src"
-          singlePackage  = "true"
-          maxPoll        = "${sf.maxPoll}"
-          pollWaitMillis = "${sf.maxWaitMillis}"
-          testLevel      = "${test.level}"
-          checkOnly      = "${check.only}"
-          logType        = "${log.type}"
-          ignoreWarnings = "true" />
+    <target name="test">		  
+		<sf:deploy 
+			username="${sf.username}" 
+			password="${sf.password}" 
+			serverurl="${sf.serverurl}" 
+			maxPoll="${sf.maxPoll}" 
+			pollWaitMillis = "${sf.maxWaitMillis}"
+			deployRoot="src" 
+			checkOnly="${check.only}" 
+			testlevel="${test.level}" 
+			rollbackOnError="true"
+		/>
     </target>
 </project>
