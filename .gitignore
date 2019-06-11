@@ -4,3 +4,9 @@
 IlluminatedCloud/devolga/OfflineSymbolTable\.zip
 
 OCInvoice\.iml
+
+config/
+
+OCInvoice\.sublime-workspace
+
+OCInvoice\.sublime-project
