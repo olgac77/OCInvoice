@@ -11,7 +11,7 @@
 			"file": "src/classes/AmountToText.cls",
 			"settings":
 			{
-				"buffer_size": 4705,
+				"buffer_size": 4696,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -61,10 +61,12 @@
 	[
 		"/C/Users/ociszek001/IdeaProjects/OCInvoice2",
 		"/C/Users/ociszek001/IdeaProjects/OCInvoice2/src",
-		"/C/Users/ociszek001/IdeaProjects/OCInvoice2/src/layouts"
+		"/C/Users/ociszek001/IdeaProjects/OCInvoice2/src/classes"
 	],
 	"file_history":
 	[
+		"/C/Users/ociszek001/IdeaProjects/OCInvoice2/src/classes/AmountToText.cls",
+		"/C/Users/ociszek001/IdeaProjects/OCInvoice2/src/classes/TestBatch.cls",
 		"/C/Users/ociszek001/IdeaProjects/OCInvoice2"
 	],
 	"find":
@@ -109,15 +111,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4705,
+						"buffer_size": 4696,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								643,
-								643
+								634,
+								634
 							]
 						],
 						"settings":
