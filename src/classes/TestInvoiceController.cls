@@ -42,9 +42,7 @@ private class TestInvoiceController {
     static void testGetLogos() {
         List<User> u = [SELECT Id from User where Username = :TestDataClass.userName];
         ContentDocumentLink cdl = new ContentDocumentLink();
-        Test.startTest();
-        /*Account acc = new Account(Name = 'TestTest4', NIP__c = '115-111-11-11', Phone = '113', BillingPostalCode = '12-542');
-        insert acc;*/
+        Test.startTest();       
         List<Account> acc = [SELECT Id from Account];
         ContentVersion cv = TestDataClass.insertContentVersion();
         insert cv;

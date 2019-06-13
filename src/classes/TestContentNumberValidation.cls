@@ -23,13 +23,11 @@ private class TestContentNumberValidation {
 
     @isTest
     static void testInsertContentPositive() {
-        List<User> u = [SELECT Id FROM User WHERE UserName = 'devkama23052019@test.com'];
-        /*Account acc = new Account(Name = 'TestTest3', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542');*/
+        List<User> u = [SELECT Id FROM User WHERE UserName = 'devkama23052019@test.com'];      
         List<AggregateResult> ar = new List<AggregateResult>();
         ContentDocumentLink cdl = new ContentDocumentLink();
         System.runAs(u.get(0)) {
-            Test.startTest();
-            /*insert acc;*/
+            Test.startTest();           
             List<Account> acc = [SELECT Id from Account];
             ContentVersion contentVersion = new ContentVersion(
                     Title = 'Test',
