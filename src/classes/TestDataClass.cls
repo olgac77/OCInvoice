@@ -6,8 +6,11 @@ public with sharing class TestDataClass {
     public static final String userName = 'devkama23052019@test.com';
 
     public static List<Invoice__c> loadInvoices() {
-        List<sObject>inv = Test.loadData(Invoice__c.getSObjectType(), 'TestData');
-        return inv;
+        List<Account> acc = insertAccount();
+        List<Seller__c> sell = insertSeller();
+       List<Invoice__c> inv = new List<Invoice__c> {new Invoice__c(Issue_Place__c = 'Warszawa', Delivery_Date__c = Date.newInstance(2019, 06, 13), Seller__c = sell.get(0).Id, Issue_Date__c = Date.newInstance(2019, 06, 13), Account__c = acc.get(0).Id,Payment_Terms__c = 7, Status__c = 'Unpaid', Payment__c = 'Transfer')};
+       insert inv;
+       return inv;
     }
 
     public static List <Service__c> insertServices(List<VAT__c> vats, List<Invoice__c> invoices) {
@@ -29,9 +32,7 @@ public with sharing class TestDataClass {
         return vat;
     }
 
-    public static ContentDocumentLink insertContent() {
-        Account acc = new Account(Name = 'TestTest', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542');
-        insert acc;
+    public static ContentDocumentLink insertContent(List<Account> acc) {        
         ContentVersion contentVersion = new ContentVersion(
                 Title = 'Test',
                 PathOnClient = 'Test.jpg',
@@ -42,7 +43,7 @@ public with sharing class TestDataClass {
         List<ContentDocument> documents = [SELECT Id, Title, LatestPublishedVersionId FROM ContentDocument];
 
         ContentDocumentLink cdl = New ContentDocumentLink();
-        cdl.LinkedEntityId = acc.id;
+        cdl.LinkedEntityId = acc.get(0).Id;
         cdl.ContentDocumentId = documents.get(0).Id;
         cdl.shareType = 'V';
         insert cdl;
@@ -67,5 +68,17 @@ public with sharing class TestDataClass {
                 IsMajorVersion = true
         );
                 return contentVersion;
+    }
+
+    public static List<Account> insertAccount(){
+        List<Account> acc = new List <Account> {new Account(Name = 'TestTest1', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542')};
+        insert acc;
+        return acc;
+    }
+
+    public static List<Seller__c> insertSeller(){
+        List<Seller__c> sell = new List<Seller__c> {new Seller__c(Company_Name__c = 'TestCompany', First_Name__c = 'Jan', Last_Name__c = 'Kowalski', NIP__c = '111-112-12-12', Street__c ='Testowa', Street_no__c = '1', City__c = 'Testowo', Postal_Code__c = '00-001', Bank_Account_Number__c = '11111111111111111111111111', Phone__c = '12345' )};
+        insert sell;
+        return sell;
     }
 }

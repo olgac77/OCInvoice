@@ -23,13 +23,12 @@ private class TestContentNumberValidation {
 
     @isTest
     static void testInsertContentPositive() {
-        List<User> u = [SELECT Id FROM User WHERE UserName = 'devkama23052019@test.com'];
-        Account acc = new Account(Name = 'TestTest', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542');
+        List<User> u = [SELECT Id FROM User WHERE UserName = 'devkama23052019@test.com'];      
         List<AggregateResult> ar = new List<AggregateResult>();
         ContentDocumentLink cdl = new ContentDocumentLink();
         System.runAs(u.get(0)) {
-            Test.startTest();
-            insert acc;
+            Test.startTest();           
+            List<Account> acc = [SELECT Id from Account];
             ContentVersion contentVersion = new ContentVersion(
                     Title = 'Test',
                     PathOnClient = 'Test.jpg',
@@ -40,11 +39,11 @@ private class TestContentNumberValidation {
             List<ContentDocument> documents = [SELECT Id, Title, LatestPublishedVersionId FROM ContentDocument];
 
             cdl = New ContentDocumentLink();
-            cdl.LinkedEntityId = acc.id;
+            cdl.LinkedEntityId = acc.get(0).Id;
             cdl.ContentDocumentId = documents[0].Id;
             cdl.shareType = 'V';
             insert cdl;
-            ar = [SELECT COUNT (Id) num FROM ContentDocumentLink WHERE shareType = 'V' AND LinkedEntityId = :acc.id];
+            ar = [SELECT COUNT (Id) num FROM ContentDocumentLink WHERE shareType = 'V' AND LinkedEntityId = :acc.get(0).Id];
             Test.stopTest();
         }
         System.assertEquals(1, ar.get(0).get('num'));
@@ -52,7 +51,8 @@ private class TestContentNumberValidation {
 
     @isTest
     static void testInsertContentNegative() {
-        ContentDocumentLink cdlFirst = TestDataClass.insertContent();
+        List<Account> acc = [SELECT Id from Account];
+        ContentDocumentLink cdlFirst = TestDataClass.insertContent(acc);
         ContentVersion contentVersion = new ContentVersion(
                 Title = 'Test2',
                 PathOnClient = 'Test.jpg',

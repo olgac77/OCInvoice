@@ -147,11 +147,7 @@
   <types>
     <members>OrgPreference</members>
     <name>Settings</name>
-  </types>
-  <!--types>
-    <members>TestData</members>
-    <name>StaticResource</name>
-  </types-->
+  </types>  
   <types>
     <members>Account.NIPRule</members>
     <members>Account.PhoneRule</members>

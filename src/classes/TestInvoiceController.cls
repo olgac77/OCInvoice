@@ -42,15 +42,14 @@ private class TestInvoiceController {
     static void testGetLogos() {
         List<User> u = [SELECT Id from User where Username = :TestDataClass.userName];
         ContentDocumentLink cdl = new ContentDocumentLink();
-        Test.startTest();
-        Account acc = new Account(Name = 'TestTest4', NIP__c = '115-111-11-11', Phone = '113', BillingPostalCode = '12-542');
-        insert acc;
+        Test.startTest();       
+        List<Account> acc = [SELECT Id from Account];
         ContentVersion cv = TestDataClass.insertContentVersion();
         insert cv;
         List<ContentDocument> documents = [SELECT Id, Title, LatestPublishedVersionId FROM ContentDocument];
         cdl = New ContentDocumentLink();
-        cdl.LinkedEntityId = acc.id;
-        cdl.ContentDocumentId = documents[0].Id;
+        cdl.LinkedEntityId = acc.get(0).Id;
+        cdl.ContentDocumentId = documents.get(0).Id;
         cdl.shareType = 'V';
         insert cdl;
         Test.stopTest();
@@ -58,7 +57,7 @@ private class TestInvoiceController {
         String env;
         System.runAs(u.get(0)) {
             InvoiceController invC = new InvoiceController();
-            logoURL = invC.getLogos(acc.Id);
+            logoURL = invC.getLogos(acc.get(0).Id);
             env = URL.getSalesforceBaseUrl().toExternalForm();
         }
         System.assertEquals(env + '/sfc/servlet.shepherd/document/download/' + cdl.ContentDocumentId, logoURL);
