@@ -5,8 +5,7 @@
     <name>AuraDefinitionBundle</name>
   </types>
   <types>
-    <members>AmountToText</members>    
-    <members>ContentTriggerHandler</members>
+    <members>AmountToText</members>   
     <members>GrossCalculation</members>
     <members>InvoiceController</members>
     <members>NetCalculation</members>
