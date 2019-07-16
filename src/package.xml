@@ -77,8 +77,7 @@
 	<members>FileUploadLabel</members>
 	<members>ErrorLabel</members>
 	<members>SuccessLabel</members>
-	<members>DeleteSuccessLabel</members>
-	<members>SuccessErrorLabel</members>
+	<members>DeleteSuccessLabel</members>	
 	<members>LogoException</members>
 	<members>LogoDeleteException</members>
 	<members>DeleteErrorLabel</members>
