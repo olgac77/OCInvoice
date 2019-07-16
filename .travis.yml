@@ -1,5 +1,14 @@
+dist: xenial
 language: java
+apt:
+   packages:
+     ant
+addons:
+  apt:
+    packages:
+      ant
 script: ant test
 env:
    global:
       - SFDC_URL=https://login.salesforce.com
+
