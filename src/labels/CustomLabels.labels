@@ -50,6 +50,13 @@
         <value>Data wystawienia</value>
     </labels>
     <labels>
+        <fullName>DeleteErrorLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DeleteErrorLabel</shortDescription>
+        <value>Error has occured. File hasn&apos;t been deleted!</value>
+    </labels>
+    <labels>
         <fullName>DeleteSuccessLabel</fullName>
         <language>en_US</language>
         <protected>true</protected>

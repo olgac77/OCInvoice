@@ -81,6 +81,7 @@
 	<members>SuccessErrorLabel</members>
 	<members>LogoException</members>
 	<members>LogoDeleteException</members>
+	<members>DeleteErrorLabel</members>
 	<members>LogoError</members>
 	<members>LogoSuccess</members>	
     <name>CustomLabel</name>
