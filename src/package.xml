@@ -143,10 +143,6 @@
   <types>
     <members>*</members>
     <name>ProfileSessionSetting</name>
-  </types>
-  <types>
-    <members>OrgPreference</members>
-    <name>Settings</name>
   </types>  
   <types>
     <members>Account.NIPRule</members>
