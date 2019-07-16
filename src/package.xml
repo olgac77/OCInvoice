@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
+	<members>InvoiceLogoCmp</members>
+    <name>AuraDefinitionBundle</name>
+  </types>
+  <types>
     <members>AmountToText</members>
     <members>ContentNumberValidation</members>
     <members>ContentTriggerHandler</members>
@@ -17,8 +21,10 @@
     <members>TestGrossCalculation</members>
     <members>TestInvoiceController</members>
     <members>TestNetCalculation</members>
-    <members>TestVATCalculation</members>
-    <members>TestContentNumberValidation</members>
+    <members>TestVATCalculation</members>    
+	<members>LogoValidation</members>
+    <members>TestLogoValidation</members>
+    <members>Wrapper</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -26,7 +32,6 @@
     <name>ApexPage</name>
   </types>
   <types>
-    <members>ContentTrigger</members>
     <members>ServiceTrigger</members>
     <name>ApexTrigger</name>
   </types>
@@ -70,6 +75,16 @@
     <members>VAT</members>
     <members>VATAmount</members>
     <members>Way_of_payment</members>
+	<members>ConfirmationLabel</members>
+	<members>FileUploadLabel</members>
+	<members>ErrorLabel</members>
+	<members>SuccessLabel</members>
+	<members>DeleteSuccessLabel</members>
+	<members>SuccessErrorLabel</members>
+	<members>LogoException</members>
+	<members>LogoDeleteException</members>
+	<members>LogoError</members>
+	<members>LogoSuccess</members>	
     <name>CustomLabel</name>
   </types>
   <types>
@@ -109,6 +124,7 @@
   </types>
   <types>
     <members>OCInvoice_UtilityBar</members>
+	<members>Seller</members>
     <name>FlexiPage</name>
   </types>
   <types>

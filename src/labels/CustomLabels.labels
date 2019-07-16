@@ -36,11 +36,25 @@
         <value>Nabywca</value>
     </labels>
     <labels>
+        <fullName>ConfirmationLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ConfirmationLabel</shortDescription>
+        <value>&apos;Are you sure you want to delete this file?&apos;</value>
+    </labels>
+    <labels>
         <fullName>Date_of_issue</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Date of issue</shortDescription>
         <value>Data wystawienia</value>
+    </labels>
+    <labels>
+        <fullName>DeleteSuccessLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DeleteSuccessLabel</shortDescription>
+        <value>File has been successfully deleted</value>
     </labels>
     <labels>
         <fullName>Delivery_date</fullName>
@@ -64,6 +78,20 @@
         <value>Termin zapłaty</value>
     </labels>
     <labels>
+        <fullName>ErrorLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ErrorLabel</shortDescription>
+        <value>Error!</value>
+    </labels>
+    <labels>
+        <fullName>FileUploadLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>FileUploadLabel</shortDescription>
+        <value>Attach Seller&apos;s logo</value>
+    </labels>
+    <labels>
         <fullName>GrossAmount</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -83,6 +111,34 @@
         <protected>true</protected>
         <shortDescription>Unit</shortDescription>
         <value>Jm</value>
+    </labels>
+    <labels>
+        <fullName>LogoDeleteException</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LogoDeleteException</shortDescription>
+        <value>Error while deleting file</value>
+    </labels>
+    <labels>
+        <fullName>LogoError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LogoError</shortDescription>
+        <value>Logo has been already uploaded for this Seller!</value>
+    </labels>
+    <labels>
+        <fullName>LogoException</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LogoException</shortDescription>
+        <value>Seller can have only one Logo! Please delete one!</value>
+    </labels>
+    <labels>
+        <fullName>LogoSuccess</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LogoSuccess</shortDescription>
+        <value>Logo has been uploaded for this Seller!</value>
     </labels>
     <labels>
         <fullName>NIP</fullName>
@@ -181,6 +237,13 @@
         <protected>true</protected>
         <shortDescription>Street</shortDescription>
         <value>ul.</value>
+    </labels>
+    <labels>
+        <fullName>SuccessLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SuccessLabel</shortDescription>
+        <value>Success!</value>
     </labels>
     <labels>
         <fullName>Total</fullName>
