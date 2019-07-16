@@ -10,19 +10,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ContentNumberValidation</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ContentTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>GrossCalculation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>InvoiceController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LogoValidation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -46,10 +42,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestContentNumberValidation</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>TestDataClass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -59,6 +51,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TestInvoiceController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestLogoValidation</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -75,6 +71,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>VATCalculation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Wrapper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
