@@ -10,6 +10,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CustomLookUpController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>GrossCalculation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -55,6 +59,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TestLogoValidation</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestLookUpController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -266,6 +274,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Invoice__c.Amount_in_words__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Invoice__c.Draft__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

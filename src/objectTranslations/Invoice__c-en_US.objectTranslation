@@ -22,12 +22,20 @@
         <name>Delivery_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Draft --></label>
+        <name>Draft__c</name>
+    </fields>
+    <fields>
         <label><!-- Due Date --></label>
         <name>Due_Date__c</name>
     </fields>
     <fields>
         <label><!-- Gross Total --></label>
         <name>Gross_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice_Number --></label>
+        <name>Invoice_Number__c</name>
     </fields>
     <fields>
         <label><!-- Issue Date --></label>

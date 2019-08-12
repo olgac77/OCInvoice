@@ -8,7 +8,7 @@ public with sharing class TestDataClass {
     public static List<Invoice__c> loadInvoices() {
         List<Account> acc = insertAccount();
         List<Seller__c> sell = insertSeller();
-       List<Invoice__c> inv = new List<Invoice__c> {new Invoice__c(Issue_Place__c = 'Warszawa', Delivery_Date__c = Date.newInstance(2019, 06, 13), Seller__c = sell.get(0).Id, Issue_Date__c = Date.newInstance(2019, 06, 13), Account__c = acc.get(0).Id,Payment_Terms__c = 7, Status__c = 'Unpaid', Payment__c = 'Transfer')};
+       List<Invoice__c> inv = new List<Invoice__c> {new Invoice__c(Issue_Place__c = 'Warszawa', Delivery_Date__c = Date.newInstance(2019, 06, 13), Seller__c = sell.get(0).Id, Issue_Date__c = Date.newInstance(2019, 06, 13), Account__c = acc.get(0).Id,Payment_Terms__c = 7, Status__c = 'Unpaid', Payment__c = 'Transfer', Invoice_Number__c='FV/2019/01/01')};
        insert inv;
        return inv;
     }

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
+        <fullName>Account_Wizard_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Account Wizard Text</shortDescription>
+        <value>Please search for already created Account by Account Name or click New.</value>
+    </labels>
+    <labels>
         <fullName>AmountInWords</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -111,6 +118,13 @@
         <protected>true</protected>
         <shortDescription>Invoice</shortDescription>
         <value>Faktura nr</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Wizard_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Invoice Wizard Text</shortDescription>
+        <value>Please search for already created Invoice by Invoice Number or click New.</value>
     </labels>
     <labels>
         <fullName>Jm</fullName>
@@ -230,6 +244,13 @@
         <protected>true</protected>
         <shortDescription>Seller</shortDescription>
         <value>Sprzedawca</value>
+    </labels>
+    <labels>
+        <fullName>Seller_Wizard_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Seller Wizard Text</shortDescription>
+        <value>Please search for already created Seller by Company Name or click New.</value>
     </labels>
     <labels>
         <fullName>Signature</fullName>

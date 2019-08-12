@@ -390,6 +390,7 @@
         <customTabListAdditionalFields>ACCOUNT.PHONE1</customTabListAdditionalFields>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>ListClean</excludedStandardButtons>
+        <excludedStandardButtons>CreateCallList</excludedStandardButtons>
         <excludedStandardButtons>DiscoveryGetAccountsAction</excludedStandardButtons>
         <excludedStandardButtons>DataDotComGetAccountsMultiAddAction</excludedStandardButtons>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
@@ -417,12 +418,6 @@
         <active>true</active>
         <errorConditionFormula>NOT(REGEX(Phone , $CustomMetadata.Validation_Setting__mdt.Phone.Value__c ))</errorConditionFormula>
         <errorMessage>Please provide only digits</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>PostalCodeRule</fullName>
-        <active>true</active>
-        <errorConditionFormula>NOT(REGEX( BillingPostalCode,  $CustomMetadata.Validation_Setting__mdt.Postal_Code.Value__c ))</errorConditionFormula>
-        <errorMessage>Please provide correct Billing Postal Code</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
