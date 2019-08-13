@@ -127,6 +127,7 @@
         <name>CustomObjectTranslation</name>
     </types>
     <types>
+        <members>Create_Invoice</members>
         <members>Invoice__c</members>
         <members>Seller__c</members>
         <members>Service__c</members>
@@ -174,6 +175,10 @@
     <types>
         <members>*</members>
         <name>ProfileSessionSetting</name>
+    </types>
+    <types>
+        <members>Invoice__c.UpdateInvoiceStatus</members>
+        <name>QuickAction</name>
     </types>
     <types>
         <members>Account.NIPRule</members>

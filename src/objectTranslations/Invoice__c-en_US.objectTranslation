@@ -121,6 +121,10 @@
             <section>Payment Terms</section>
         </sections>
     </layouts>
+    <quickActions>
+        <label><!-- Update Invoice --></label>
+        <name>UpdateInvoiceStatus</name>
+    </quickActions>
     <startsWith>Consonant</startsWith>
     <validationRules>
         <errorMessage><!-- Saving changes is not permitted. Invoice is in &apos;Paid&apos; status --></errorMessage>

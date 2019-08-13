@@ -419,6 +419,10 @@
         <enabled>true</enabled>
     </pageAccesses>
     <tabVisibilities>
+        <tab>Create_Invoice</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Invoice__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
