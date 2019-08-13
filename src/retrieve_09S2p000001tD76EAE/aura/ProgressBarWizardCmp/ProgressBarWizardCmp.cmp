@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:appHostable" access="global">
+    <aura:attribute name="Step" type="String"/>
+    <div class="slds-size_1-of-1">
+        <lightning:progressIndicator currentStep="{!v.Step}" type="path" variant="base">
+            <lightning:progressStep label="Account" value="1"/>
+            <lightning:progressStep label="Seller" value="2"/>
+            <lightning:progressStep label="Invoice" value="3"/>
+            <lightning:progressStep label="Services" value="4"/>
+            <lightning:progressStep label="Preview your Invoice" value="5"/>
+        </lightning:progressIndicator>
+    </div>
+</aura:component>

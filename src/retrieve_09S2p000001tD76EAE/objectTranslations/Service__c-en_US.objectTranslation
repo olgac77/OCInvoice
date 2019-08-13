@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Discount --></label>
+        <name>Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Amount --></label>
+        <name>Gross_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice --></label>
+        <name>Invoice__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name of Service --></label>
+        <name>Name_of_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Amount --></label>
+        <name>Net_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Price --></label>
+        <name>Net_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- PKWIU --></label>
+        <name>PKWIU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price after discount --></label>
+        <name>Price_after_discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit --></label>
+        <name>Unit__c</name>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kg</masterLabel>
+            <translation><!-- Kg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Km</masterLabel>
+            <translation><!-- Km --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Km2</masterLabel>
+            <translation><!-- Km2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Months</masterLabel>
+            <translation><!-- Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pcs</masterLabel>
+            <translation><!-- Pcs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- VAT Amount --></label>
+        <name>VAT_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- VAT --></label>
+        <name>VAT__c</name>
+        <relationshipLabel><!-- Services --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Service Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice --></label>
+            <section>Invoice</section>
+        </sections>
+        <sections>
+            <label><!-- Service details --></label>
+            <section>Service details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

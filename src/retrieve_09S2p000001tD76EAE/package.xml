@@ -35,6 +35,7 @@
         <members>AccountWizardCmp</members>
         <members>CustomLoopkUp</members>
         <members>InvoiceLogoCmp</members>
+        <members>InvoiceLogoCmp</members>
         <members>InvoiceWizardCmp</members>
         <members>InvoiceWizardContainerCmp</members>
         <members>InvoiceWizardEvent</members>
@@ -141,10 +142,6 @@
     <types>
         <members>Update_Invoice_Status</members>
         <name>Flow</name>
-    </types>
-    <types>
-        <members>Update_Invoice_Status</members>
-        <name>FlowDefinition</name>
     </types>
     <types>
         <members>Account-Account %28Marketing%29 Layout</members>

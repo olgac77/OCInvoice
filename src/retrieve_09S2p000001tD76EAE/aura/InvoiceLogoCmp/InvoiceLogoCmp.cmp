@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="LogoValidation">
+    <aura:attribute name="files" type="List"/>    
+    <aura:attribute name="accept" type="List" default="['.jpg', '.jpeg', '.png']"/>
+    <aura:attribute name="multiple" type="Boolean" default="false"/>
+    <aura:attribute name="title" type="String" default="Sample"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <lightning:notificationsLibrary aura:id="notifLib" />
+    <lightning:card title="{!v.title}">
+		<div class="slds-align_absolute-center">
+			<lightning:fileUpload label="{!$Label.c.FileUploadLabel}"
+                                  multiple="{!v.multiple}"
+                                  recordId="{!v.recordId}"
+                                  onuploadfinished="{!c.handleUploadFinished}" />
+        </div>
+        <div class="slds-section slds-is-open">
+  			<h3 class="slds-section__title">
+                <button aria-controls="expando-unique-id" aria-expanded="true" class="slds-button slds-section__title-action">
+                  <span class="slds-truncate" title="Logo">Logo</span>
+                </button>
+  			</h3>
+  			<div aria-hidden="false" class="slds-section__content" id="expando-unique-id">
+                 <aura:iteration items="{!v.files}" var="file">
+					<div class="slds-align_absolute-center slds-p-top_x-small">
+						<lightning:fileCard fileId="{!file.ContentDocumentId}"/>
+					</div>
+					<div class="slds-align_absolute-center slds-p-top_x-small">
+						<lightning:buttonIcon iconName="utility:delete" 
+							variant="brand" 
+							alternativeText="Delete File" 
+							value="{!file.ContentDocumentId}"
+							onclick="{!c.deleteFile}"/>              
+					</div>
+          		</aura:iteration>         
+			</div>
+		</div>   
+	</lightning:card>
+</aura:component>
