@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="Account" type="String"/>
+    <aura:attribute name="Seller" type="String"/>
+    <aura:attribute name="Invoice" type="String"/>
+    <aura:attribute name="Services" type="List"/>
+    <aura:attribute name="Step" type="String"/>
+</aura:event>

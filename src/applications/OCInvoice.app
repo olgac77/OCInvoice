@@ -14,6 +14,7 @@
     <tabs>Service__c</tabs>
     <tabs>Invoice__c</tabs>
     <tabs>VAT__c</tabs>
+    <tabs>Create_Invoice</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>OCInvoice_UtilityBar</utilityBar>
 </CustomApplication>
