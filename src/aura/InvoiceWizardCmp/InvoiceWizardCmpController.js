@@ -6,7 +6,7 @@
         var button = component.get("v.truthy");
         component.set("v.truthy",true);
     },
-   
+    
     handleNext: function(component, event){
         var appEvent = $A.get("e.c:InvoiceWizardEvent");
         appEvent.setParam("Step", "4");
@@ -28,18 +28,14 @@
         component.set("v.truthy",false); 
     },
     handleError: function(component,event){
-        var error = event.getParams('error');
-        console.log(JSON.stringify(error));
+        var error = event.getParams('error');       
     },
     handleBack: function(component,event) {
-        var accountId = component.get("v.accountId");
-        var sellerId = component.get("v.sellerId");
-        var invoiceId = component.get("v.invoiceId");
         var appEvent = $A.get("e.c:InvoiceWizardEvent");                
         appEvent.setParam("Step", "2");
-        appEvent.setParam("Account",accountId);
-        appEvent.setParam("Seller",sellerId);
-        appEvent.setParam("Invoice", invoiceId);
+        appEvent.setParam("Account",component.get("v.accountId"));
+        appEvent.setParam("Seller",component.get("v.sellerId"));
+        appEvent.setParam("Invoice", component.get("v.invoiceId"));
         appEvent.fire();
     }   
 })

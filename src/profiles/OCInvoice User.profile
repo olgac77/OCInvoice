@@ -11,7 +11,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CustomLookUpController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>GrossCalculation</apexClass>
@@ -417,7 +417,7 @@
     <pageAccesses>
         <apexPage>Invoice</apexPage>
         <enabled>true</enabled>
-    </pageAccesses>
+    </pageAccesses>    
     <tabVisibilities>
         <tab>Invoice__c</tab>
         <visibility>DefaultOn</visibility>

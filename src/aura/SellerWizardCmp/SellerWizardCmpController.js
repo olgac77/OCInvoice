@@ -5,17 +5,12 @@
     handleClick: function(component, event){
         var button = component.get("v.truthy");
         component.set("v.truthy",true);
-    },
-    handleSubmit: function(component, event){
-        event.preventDefault();    
-        const fields = event.getParam('fields');        
-        component.find('myRecordForm').submit(fields);               
-    },
+    },    
     handleNext: function(component, event){
         var appEvent = $A.get("e.c:InvoiceWizardEvent");
         appEvent.setParam("Step", "3");
         appEvent.setParam("Seller",component.get("v.sellerId"));
-		appEvent.setParam("Account",component.get("v.accountId"));        
+        appEvent.setParam("Account",component.get("v.accountId"));        
         appEvent.fire();
     },
     handleSuccess : function(component, event, helper) {
@@ -33,16 +28,13 @@
         component.set("v.truthy",false); 
     },
     handleError: function(component,event){
-        var error = event.getParams('error');
-        console.log(JSON.stringify(error));
+        var error = event.getParams('error');        
     },
     handleBack: function(component,event) {
-        var accountId = component.get("v.accountId");
-        var sellerId = component.get("v.sellerId");        
-         var appEvent = $A.get("e.c:InvoiceWizardEvent");                
-        		appEvent.setParam("Step", "1");
-                appEvent.setParam("Account",accountId);
-        		appEvent.setParam("Seller",sellerId)
-                appEvent.fire();
+        var appEvent = $A.get("e.c:InvoiceWizardEvent");                
+        appEvent.setParam("Step", "1");
+        appEvent.setParam("Account",component.get("v.accountId"));
+        appEvent.setParam("Seller",component.get("v.sellerId"))
+        appEvent.fire();
     }   
 })

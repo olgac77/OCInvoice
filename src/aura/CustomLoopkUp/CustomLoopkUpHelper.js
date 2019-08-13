@@ -26,8 +26,7 @@
                         }                         
                         component.set('v.selectedRecord',selectedRecord);                                             
                     }
-                } else {
-                    console.log('RecordHElperERROR');
+                } else {                    
                     component.set('v.message','No Records Found');
                 }
             } else if(response.getState() === 'INCOMPLETE') {
@@ -83,8 +82,7 @@
             } else if(response.getState() === 'ERROR') {
                 // If server throws any error
                 var errors = response.getError();
-                if (errors && errors[0] && errors[0].message) {
-                     console.log('InvoiceHElperERROR');
+                if (errors && errors[0] && errors[0].message) {                    
                     component.set('v.message', errors[0].message);
                 }
             }
@@ -102,34 +100,20 @@
             'recordId' : value,
             'objectName' : component.get('v.objectName'),
             'filterField' : component.get('v.fieldName'),            
-        });
-        console.log(component.get('v.objectName'));
-        console.log(component.get('v.fieldName'));
+        });        
         action.setCallback(this, function(response) {
             var state = response.getState();            
             if (state === "SUCCESS") {                
                 var result = response.getReturnValue();               
                 component.set('v.selectedRecord',result);
-                component.set('v.value',result.value);
-                //component.set('v.recordId',result.value);
-                
-            }
-            else if (state === "INCOMPLETE") {
-                // do something
-            }
-                else if (state === "ERROR") {
-                    var errors = response.getError();
-                    if (errors) {
-                        console.log('IdHElperERROR');
-                        if (errors[0] && errors[0].message) {
-                            console.log("Error message: " + 
-                                        errors[0].message);
-                        }
-                    } else {
-                        console.log("Unknown error");
-                    }
-                }
-        });
+                component.set('v.value',result.value);               
+            }         
+            else if (state === "ERROR") {
+                var toastEvent = $A.get("e.force:showToast");
+                toastEvent.setParams({"title": "Error!", "message":"Please contact with your Salesforce Administrator", "type":"error"});
+                toastEvent.fire();
+            } 
+         });
         $A.enqueueAction(action);        	
     }
 })
