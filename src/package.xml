@@ -186,7 +186,6 @@
     <types>
         <members>Account.NIPRule</members>
         <members>Account.PhoneRule</members>
-        <members>Account.PostalCodeRule</members>
         <members>Invoice__c.Do_not_edit</members>
         <members>Seller__c.BankAccountRule</members>
         <members>Seller__c.NIPRule</members>
