@@ -10,11 +10,27 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ContentNumberValidation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ContentTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CustomLookUpController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DynamicRowItemController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>GrossCalculation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>InvConfirmation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -42,11 +58,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TestAddDeleteController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TestAmountToText</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>TestDataClass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestDynamicRowItemController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -83,6 +107,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Wrapper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>addDeleteController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
@@ -417,7 +445,11 @@
     <pageAccesses>
         <apexPage>Invoice</apexPage>
         <enabled>true</enabled>
-    </pageAccesses>    
+    </pageAccesses>
+    <tabVisibilities>
+        <tab>Create_Invoice</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Invoice__c</tab>
         <visibility>DefaultOn</visibility>

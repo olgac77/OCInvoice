@@ -1,16 +1,14 @@
 ({
     doInit: function(component) {
-        component.set("v.accountId",null);
-    },
-    handleClick: function(component, event){
-        var button = component.get("v.truthy");
-        component.set("v.truthy",true);
+        component.set("v.accountId",null);       
     },   
     handleNext: function(component, event){
         var appEvent = $A.get("e.c:InvoiceWizardEvent");
         appEvent.setParam("Step", "2");
         appEvent.setParam("Account",component.get("v.accountId")); 
-        appEvent.setParam("Seller",component.get("v.sellerId")); 
+        appEvent.setParam("Seller",component.get("v.sellerId"));
+        appEvent.setParam("Invoice",component.get("v.invoiceId"));
+        appEvent.setParam("Services",component.get("v.serviceId"));
         appEvent.fire();
     },
     handleSuccess : function(component, event, helper) {
@@ -20,13 +18,9 @@
             "message": "Record ID: " + event.getParam("id")
         });
         component.set("v.accountId",event.getParam("id"));
-        component.set("v.nextButton",false);
-        component.set("v.truthy",false);        
+        component.set("v.nextButton",false);           
     },
-    handleCancel: function(component, event){
-        var button = component.get("v.truthy");
-        component.set("v.truthy",false); 
-    },
+   
     handleError: function(component,event){
         var error = event.getParams('error');       
     }

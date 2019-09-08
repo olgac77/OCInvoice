@@ -1,0 +1,48 @@
+<aura:component controller="DynamicRowItemController" >    
+    <aura:attribute name="ServiceInstance" type="Service__c" access="public"/>
+    <aura:attribute name="rowIndex" type="String"/>  
+    <aura:attribute name="units" type="List" default="Km,Hours,Days,Kg,Km2,Months,Pcs"/>    
+    <aura:registerEvent name="DeleteRowEvt" type="c:DeleteRowEvt"/> 
+    <aura:registerEvent name="AddRowEvt" type="c:AddNewRowEvt"/> 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- Table Row -->   
+    <tr class="slds-text-title_caps">
+        <td> 
+            {!v.rowIndex + 1}
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.ServiceInstance.Name_of_Service__c}"/>
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.ServiceInstance.Quantity__c}"/>
+        </td>
+        <td class="slds-size_2-of-12">
+            <lightning:select value="{!v.ServiceInstance.Unit__c}">
+                <option value="">-- None --</option>
+                <aura:iteration items="{!v.units}" var="unit">
+                    <option value="{!unit}" text="{!unit}"></option>
+                </aura:iteration>
+            </lightning:select>
+        </td>
+        <td>
+            <ui:inputPhone class="slds-input" value="{!v.ServiceInstance.Net_Price__c}"/>
+        </td>
+        <td>
+            <c:CustomLoopkUp aura:id="childQuestion" objectName="VAT__c" fieldName="Name" IconName="standard:account" recordId="{!v.ServiceInstance.VAT__c}"/>
+        </td>
+        <td>
+            <aura:if isTrue="{!v.rowIndex == 0}">
+                <a onclick="{!c.AddNewRow}">
+                    <lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="small" alternativeText="add"/>
+                    <span class="slds-assistive-text">{!$Label.c.Add_Icon}</span>
+                </a>    
+                <aura:set attribute="else">
+                    <a onclick="{!c.removeRow}">
+                        <lightning:icon variant="error" iconName="utility:delete" class="slds-icon slds-icon_small" size="small" alternativeText="icon"/>
+                        <span class="slds-assistive-text">{!$Label.c.Delete_Icon}</span>
+                    </a>
+                </aura:set> 
+            </aura:if>
+        </td> 
+    </tr>
+</aura:component>

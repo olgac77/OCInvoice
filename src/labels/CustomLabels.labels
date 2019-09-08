@@ -5,7 +5,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Account Wizard Text</shortDescription>
-        <value>Please search for already created Account by Account Name or click New.</value>
+        <value>Please search for already created Account by Account Name or create  a new record</value>
+    </labels>
+    <labels>
+        <fullName>Add_Icon</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Add Icon</shortDescription>
+        <value>Add Icon</value>
     </labels>
     <labels>
         <fullName>AmountInWords</fullName>
@@ -71,6 +78,13 @@
         <value>File has been successfully deleted</value>
     </labels>
     <labels>
+        <fullName>Delete_Icon</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Delete Icon</shortDescription>
+        <value>Delete Icon</value>
+    </labels>
+    <labels>
         <fullName>Delivery_date</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -90,6 +104,34 @@
         <protected>true</protected>
         <shortDescription>Due date</shortDescription>
         <value>Termin zapłaty</value>
+    </labels>
+    <labels>
+        <fullName>EN_Name_of_Service</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EN Name of Service</shortDescription>
+        <value>Name of Service</value>
+    </labels>
+    <labels>
+        <fullName>EN_Net_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EN Net Price</shortDescription>
+        <value>Net Price</value>
+    </labels>
+    <labels>
+        <fullName>EN_Quantity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EN Quantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>EN_Unit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EN Unit</shortDescription>
+        <value>Unit</value>
     </labels>
     <labels>
         <fullName>ErrorLabel</fullName>
@@ -124,7 +166,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Invoice Wizard Text</shortDescription>
-        <value>Please search for already created Invoice by Invoice Number or click New.</value>
+        <value>Please search for already created Invoice by Invoice Number or create a new record</value>
     </labels>
     <labels>
         <fullName>Jm</fullName>
@@ -239,6 +281,13 @@
         <value>Ilość</value>
     </labels>
     <labels>
+        <fullName>S_NO</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>S..NO</shortDescription>
+        <value>S.NO</value>
+    </labels>
+    <labels>
         <fullName>Seller</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -250,7 +299,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Seller Wizard Text</shortDescription>
-        <value>Please search for already created Seller by Company Name or click New.</value>
+        <value>Please search for already created Seller by Company Name or create a new record</value>
+    </labels>
+    <labels>
+        <fullName>Services_Wizard_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Services Wizard Text</shortDescription>
+        <value>Please add services to your Invoice. If  there are services already attached to your invoice please review them and make proper amendments.</value>
     </labels>
     <labels>
         <fullName>Signature</fullName>

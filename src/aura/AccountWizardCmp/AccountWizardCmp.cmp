@@ -2,7 +2,7 @@
     <aura:attribute name="accountId" type="Id" default="null"/>
     <aura:attribute name="sellerId" type="Id" default = "null"/>
     <aura:attribute name="invoiceId" type="Id" default="null"/>
-    <aura:attribute name="truthy" type="Boolean" default="false"/>    
+    <aura:attribute name="serviceId" type="Set" default ="null"/>   
     <aura:attribute name="Step" type="String" default="1"/>
     <aura:attribute name="disabledButton" type="Boolean" default="false"/>
     <aura:attribute name="fields" type="String[]" default="['Name','NIP__c','BillingAddress', 'Phone']"/>
@@ -14,44 +14,30 @@
     <div class="slds-card slds-p-top_medium slds-p-around_small" >
         <div class= "slds-grid slds-wrap">
             <div class="slds-col slds-size_2-of-3 slds-medium-size_9-of-12 slds-large-size_9-of-12 slds-p-horizontal_medium"></div>          
-            <div class="slds-col slds-size_1-of-3 slds-medium-size_3-of-12 slds-large-size_3-of-12 slds-p-horizontal_medium">
-                <lightning:button label="New" title="New" onclick="{!c.handleClick}" disabled="{!v.disabledButton}"/>
+            <div class="slds-col slds-size_1-of-3 slds-medium-size_3-of-12 slds-large-size_3-of-12 slds-p-horizontal_medium slds-p-bottom_medium">                
             </div>
             <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-p-horizontal_medium"></div>
             <div class="slds-col slds-size_1-of-1 slds-medium-size_9-of-12 slds-large-size_9-of-12 slds-p-horizontal_medium">                
                 <span class="slds-p-bottom_medium slds-text-heading_small slds-text-longform">{!$Label.c.Account_Wizard_Text}</span>                
-                <aura:renderIf isTrue="{!v.truthy}">
-                    <div class="slds-p-top_small">
-                        <lightning:recordForm aura:id="myRecordForm"
-                                              objectApiName="Account"
-                                              fields="{!v.fields}"
-                                              layoutType="Compact"
-                                              columns="2"                    
-                                              mode="edit"                    
-                                              oncancel="{!c.handleCancel}"
-                                              onsuccess="{!c.handleSuccess}"
-                                              onerror="{!c.handleError}"/> 
-                    </div>
-                    <aura:set attribute="else">
-                        <div class="slds-p-top_medium">
-                            <c:CustomLoopkUp objectName="Account" fieldName="Name" label="Account Name" iconName="standard:account" 
-                                             placeholder="Enter Value" recordId="{!v.accountId}" disabledButton="{!v.disabledButton}" nextButton="{!v.nextButton}"/>                      
-                            <aura:renderIf isTrue="{!not(empty(v.accountId))}">                      
-                                <lightning:recordForm
-                                                      recordId="{!v.accountId}"
-                                                      objectApiName="Account"
-                                                      fields="{!v.fields}"                                                
-                                                      layoutType="Compact"
-                                                      columns="2"
-                                                      mode="readonly" />
-                            </aura:renderIf>
-                        </div>
-                    </aura:set>
-                </aura:renderIf>                
+                <c:CustomLoopkUp objectName="Account" fieldName="Name" label="Account Name" iconName="standard:account" 
+                                 placeholder="Enter Value" recordId="{!v.accountId}" disabledButton="{!v.disabledButton}" nextButton="{!v.nextButton}"/> 
+                <div class="slds-p-top_medium slds-p-around_small" ></div>
+                <lightning:recordForm aura:id="myRecordForm"
+                                      objectApiName="Account"
+                                      fields="{!v.fields}"
+                                      layoutType="Compact"
+                                      columns="2"                  
+                                      recordId="{!v.accountId}"                  
+                                      oncancel="{!c.handleCancel}"
+                                      onsuccess="{!c.handleSuccess}"
+                                      onerror="{!c.handleError}"
+                                      mode="{!not(empty(v.accountId)) ? 'readonly' : 'edit'}" />                                
             </div>
             <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12 slds-large-size_2-of-12 slds-p-horizontal_medium"></div>          
             <div class="slds-col slds-size_1-of-1 slds-medium-size_11-of-12 slds-large_size_11-of-12"></div>
-            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-12 slds-large_size_1-of-12 slds-p-horizontal_medium">
+            <div class="slds-col slds-size_1-of-2 slds-medium-size_11-of-12 slds-large_size_11-of-12">          
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-12 slds-large_size_1-of-12">
                 <lightning:button variant="brand" type="submit" name="save" label="Next" disabled="{!v.nextButton}" onclick="{!c.handleNext}"/>
             </div>
         </div>

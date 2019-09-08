@@ -7,7 +7,9 @@ public with sharing class InvoiceController {
     public String logoURL { get; set; }
 
     public InvoiceController() {
+        System.debug('@@call InvoiceController');
         inv = getInvoice();
+        System.debug('@@inv '+inv);
         logoURL = getLogos(inv.Seller__c);
     }
 
