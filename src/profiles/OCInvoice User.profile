@@ -70,6 +70,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TestInvConfirmation</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TestInvoiceController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -438,6 +442,10 @@
         <apexPage>Invoice</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
+    <tabVisibilities>
+        <tab>Create_Invoice</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Invoice__c</tab>
         <visibility>DefaultOn</visibility>

@@ -17,6 +17,7 @@
         <members>TestDataClass</members>
         <members>TestDynamicRowItemController</members>
         <members>TestGrossCalculation</members>
+        <members>TestInvConfirmation</members>
         <members>TestInvoiceController</members>
         <members>TestLogoValidation</members>
         <members>TestLookUpController</members>
