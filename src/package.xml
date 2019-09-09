@@ -2,8 +2,6 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>AmountToText</members>
-        <members>ContentNumberValidation</members>
-        <members>ContentTriggerHandler</members>
         <members>CustomLookUpController</members>
         <members>DynamicRowItemController</members>
         <members>GrossCalculation</members>
