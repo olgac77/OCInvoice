@@ -12,9 +12,10 @@
             if (state === "SUCCESS") {   
                 component.set("v.serviceList", responseValue);
             }else{
+                var errorService = $A.get("$Label.c.W_DynamicRow_error");
                 component.find('notifLib').showToast({
                     "variant": "error",
-                    "title": "Unable to display related Services"           
+                    "title": errorService           
                 });
             }
         });       
@@ -27,9 +28,10 @@
         for (var indexVar = 0; indexVar < allContactRows.length; indexVar++) {
             if (allContactRows[indexVar].Name_of_Service__c == '' ||allContactRows[indexVar].Quantity__c == '' || allContactRows[indexVar].Unit == '' ||allContactRows[indexVar].Net_Price__c == '' ||allContactRows[indexVar].VAT__c == '' ) {
                 isValid = false;
+                var requiredField = $A.get("$.Label.c.W_DynamicRow_required");
                 component.find('notifLib').showToast({
                     "variant": "error",
-                    "title": "One or more fields are blank on row " + (indexVar + 1)           
+                    "title": requiredField = " " + (indexVar + 1)           
                 });               
             }
         }

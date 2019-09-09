@@ -22,11 +22,11 @@
             <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12 slds-large-size_2-of-12 slds-p-horizontal_medium"></div>
             <c:dynamicRow invoiceId="{!v.invoiceId}" serviceList="{!v.serviceId}" nextButton="{!v.nextButton}" aura:id="save"/>
             <div class="slds-col slds-size_1-of-2 slds-medium-size_11-of-12 slds-large_size_11-of-12 slds-p-top_medium">
-                <lightning:button variant="brand" type="submit" name="save" label="Back" onclick="{!c.handleBack}"/>
+                <lightning:button variant="brand" type="submit" name="save" label="{!$Label.c.Back}" onclick="{!c.handleBack}"/>
             </div>
             <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-12 slds-large_size_1-of-12 slds-p-top_medium">
                 <div class="slds-float_right">
-                    <lightning:button variant="brand" type="submit" name="save" label="Next" disabled="{!v.nextButton}" onclick="{!c.handleNext}"/>
+                    <lightning:button variant="brand" type="submit" name="save" label="{!$Label.c.Next}" disabled="{!v.nextButton}" onclick="{!c.handleNext}"/>
                 </div>
             </div>
         </div>

@@ -19,8 +19,7 @@ public with sharing class addDeleteController {
         return services;
     }
     
-    @AuraEnabled
-    
+    @AuraEnabled    
     public static void deleteService(Id serviceId){
         database.delete(serviceId);
     }

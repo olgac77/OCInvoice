@@ -1,4 +1,20 @@
 ({
+    doInit: function(component,event){
+        var action = component.get("c.getPDFURL");            
+            action.setCallback(this, function(response) {
+                var state = response.getState();
+                var result = response.getReturnValue();
+                component.set("v.url",result);
+                if (state === "ERROR") {  
+                    var errorPdf = $A.get("$Label.c.W_Preview_error_Pdf");
+                    component.find('notifLib').showToast({
+                        "variant": "error",
+                        "title": errorPdf          
+                    });
+                }
+            });       
+            $A.enqueueAction(action);        
+    },
     handleBack: function(component,event) {
         var appEvent = $A.get("e.c:InvoiceWizardEvent");                
         appEvent.setParam("Step", "4");
@@ -17,15 +33,17 @@
             action.setParams({"invoiceId":invoiceId});
             action.setCallback(this, function(response) {
                 var state = response.getState();            
-                if (state === "SUCCESS") {   
+                if (state === "SUCCESS") {  
+                    var successConfirm = $A.get("$Label.c.W_Preview_toaster_success");
                     component.find('notifLib').showToast({
                         "variant": "success",
-                        "title": "Your invoice has been confirmed and you will be redirected to initial page"           
+                        "title": successConfirm          
                     });
                 }else{
+                    var errorConfirm = $A.get("$Label.c.W_Preview_error");
                     component.find('notifLib').showToast({
                         "variant": "error",
-                        "title": "Unable to confirm your invoice"           
+                        "title": errorConfirm           
                     });
                 }
             });       
@@ -33,9 +51,10 @@
             setTimeout(function(){ location.reload(true); }, 4000);
         }
         else{
+            var addService = $A.get("$Label.c.W_Preview_add_service");
             component.find('notifLib').showToast({
                 "variant": "error",
-                "title": "Please add services to your invoice"           
+                "title": addService           
             });           
         }
     }

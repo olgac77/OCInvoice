@@ -36,6 +36,13 @@
         <value>Osoba upoważniona do wystawienia</value>
     </labels>
     <labels>
+        <fullName>Back</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
         <fullName>Bank_account</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -48,6 +55,13 @@
         <protected>true</protected>
         <shortDescription>Buyer</shortDescription>
         <value>Nabywca</value>
+    </labels>
+    <labels>
+        <fullName>Confirm</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Confirm</shortDescription>
+        <value>Confirm</value>
     </labels>
     <labels>
         <fullName>ConfirmationLabel</fullName>
@@ -239,6 +253,20 @@
         <value>Cena netto</value>
     </labels>
     <labels>
+        <fullName>New</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>Next</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
         <fullName>Paid</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -279,6 +307,13 @@
         <protected>true</protected>
         <shortDescription>Quantity</shortDescription>
         <value>Ilość</value>
+    </labels>
+    <labels>
+        <fullName>Record_ID</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Record ID</shortDescription>
+        <value>Record ID:</value>
     </labels>
     <labels>
         <fullName>S_NO</fullName>
@@ -349,6 +384,90 @@
         <protected>true</protected>
         <shortDescription>VATAmount</shortDescription>
         <value>Kwota VAT</value>
+    </labels>
+    <labels>
+        <fullName>W_Account_Toaster_Success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W Account Toaster Success</shortDescription>
+        <value>Account has been created</value>
+    </labels>
+    <labels>
+        <fullName>W_DynamicRow</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W DynamicRow toaster error</shortDescription>
+        <value>Unable to delete Service</value>
+    </labels>
+    <labels>
+        <fullName>W_DynamicRow_error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W DynamicRow error</shortDescription>
+        <value>Unable to display related Services</value>
+    </labels>
+    <labels>
+        <fullName>W_DynamicRow_required</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W DynamicRow required</shortDescription>
+        <value>One or more fields are blank on row</value>
+    </labels>
+    <labels>
+        <fullName>W_DynamicRow_toaster_delete</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W DynamicRow toaster delete</shortDescription>
+        <value>Service has been deleted</value>
+    </labels>
+    <labels>
+        <fullName>W_DynamicRow_toaster_success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W DynamicRow toaster success</shortDescription>
+        <value>Services have been created/updated</value>
+    </labels>
+    <labels>
+        <fullName>W_Invoice_toaster_success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W Invoice toaster success</shortDescription>
+        <value>Invoice has been created</value>
+    </labels>
+    <labels>
+        <fullName>W_Preview_add_service</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W Preview error Add Service</shortDescription>
+        <value>Please add services to your invoice</value>
+    </labels>
+    <labels>
+        <fullName>W_Preview_error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W Preview error confirm</shortDescription>
+        <value>Unable to confirm your invoice</value>
+    </labels>
+    <labels>
+        <fullName>W_Preview_error_Pdf</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W Preview error Pdf</shortDescription>
+        <value>Unable to display PDF</value>
+    </labels>
+    <labels>
+        <fullName>W_Preview_toaster_success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W Preview toaster success</shortDescription>
+        <value>Your invoice has been confirmed and you will be redirected to initial page</value>
+    </labels>
+    <labels>
+        <fullName>W_Seller_toaster_success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>W Seller toaster success</shortDescription>
+        <value>Seller has been created</value>
     </labels>
     <labels>
         <fullName>Way_of_payment</fullName>

@@ -11,10 +11,10 @@
             {!v.rowIndex + 1}
         </td>
         <td>
-            <ui:inputText class="slds-input" value="{!v.ServiceInstance.Name_of_Service__c}"/>
+            <lightning:input name="{!v.ServiceInstance.Name_of_Service__c}" value="{!v.ServiceInstance.Name_of_Service__c}"/>
         </td>
         <td>
-            <ui:inputText class="slds-input" value="{!v.ServiceInstance.Quantity__c}"/>
+            <lightning:input name="{!v.ServiceInstance.Quantity__c}" type="number" value="{!v.ServiceInstance.Quantity__c}"/>
         </td>
         <td class="slds-size_2-of-12">
             <lightning:select value="{!v.ServiceInstance.Unit__c}">
@@ -25,7 +25,7 @@
             </lightning:select>
         </td>
         <td>
-            <ui:inputPhone class="slds-input" value="{!v.ServiceInstance.Net_Price__c}"/>
+            <lightning:input name="{!v.ServiceInstance.Net_Price__c}" type="number" value="{!v.ServiceInstance.Net_Price__c}"/>
         </td>
         <td>
             <c:CustomLoopkUp aura:id="childQuestion" objectName="VAT__c" fieldName="Name" IconName="standard:account" recordId="{!v.ServiceInstance.VAT__c}"/>

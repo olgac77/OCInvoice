@@ -23,10 +23,11 @@
                     console.log(state);
                     if (state === "SUCCESS") {
                         component.set("v.serviceList", []);
-                        helper.createObjectData(component, event);                    
+                        helper.createObjectData(component, event); 
+                        var successSave = $A.get("$Label.c.W_DynamicRow_toaster_success");
                         component.find('notifLib').showToast({
                             "variant": "success",
-                            "title": "Services have been created/updated"            
+                            "title": successSave            
                         });                  
                     }       
                 });
@@ -63,15 +64,17 @@
             action.setParams({"serviceId":removedSerId});
             action.setCallback(this, function(response) {
                 var state = response.getState();           
-                if (state === "SUCCESS") {   
+                if (state === "SUCCESS") {
+                    var successDelete = $A.get("$Label.c.W_DynamicRow_toaster_delete") 
                     component.find('notifLib').showToast({
                         "variant": "success",
-                        "title": "Service has been deleted"            
+                        "title": successDelete            
                     });
                 }else{
+                    errorDelete = $A.get("$Label.c.W_DynamicRow")
                     component.find('notifLib').showToast({
                         "variant": "error",
-                        "title": "Unable to delete Service"            
+                        "title": errorDelete           
                     });
                 }
             });       
