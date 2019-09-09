@@ -14,7 +14,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DynamicRowItemController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>GrossCalculation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>InvConfirmation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -42,6 +50,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TestAddDeleteController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TestAmountToText</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -50,7 +62,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TestDynamicRowItemController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TestGrossCalculation</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TestInvConfirmation</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -83,6 +103,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Wrapper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>addDeleteController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>

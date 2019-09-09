@@ -12,14 +12,20 @@
         <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_2-of-12 slds-p-bottom_medium"></div>
         <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_8-of-12"> 
             <aura:renderIf isTrue="{!v.Step=='1'}">
-                <c:AccountWizardCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}"/>    	
+                <c:AccountWizardCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}" serviceId="{!v.serviceId}"/>    	
             </aura:renderIf>
             <aura:renderIf isTrue="{!v.Step=='2'}">
-                <c:SellerWizardCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}"/>
+                <c:SellerWizardCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}" serviceId="{!v.serviceId}"/>
             </aura:renderIf>
             <aura:renderIf isTrue="{!v.Step=='3'}">
-                <c:InvoiceWizardCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}"/>
-            </aura:renderIf>             
+                <c:InvoiceWizardCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}" serviceId="{!v.serviceId}"/>
+            </aura:renderIf>
+            <aura:renderIf isTrue="{!v.Step=='4'}">
+                <c:ServicesWizardCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}" serviceId="{!v.serviceId}"/>
+            </aura:renderIf> 
+            <aura:renderIf isTrue="{!v.Step=='5'}">
+                <c:PreviewYourInvoiceCmp accountId="{!v.accountId}" sellerId="{!v.sellerId}" invoiceId="{!v.invoiceId}" serviceId="{!v.serviceId}" />
+            </aura:renderIf> 
         </div>
     </div>
 </aura:component>

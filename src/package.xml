@@ -3,16 +3,21 @@
     <types>
         <members>AmountToText</members>
         <members>CustomLookUpController</members>
+        <members>DynamicRowItemController</members>
         <members>GrossCalculation</members>
+        <members>InvConfirmation</members>
         <members>InvoiceController</members>
         <members>LogoValidation</members>
         <members>NetCalculation</members>
         <members>OCInvoiceException</members>
         <members>ServiceTriggerHandler</members>
         <members>ServiceValidation</members>
+        <members>TestAddDeleteController</members>
         <members>TestAmountToText</members>
         <members>TestDataClass</members>
+        <members>TestDynamicRowItemController</members>
         <members>TestGrossCalculation</members>
+        <members>TestInvConfirmation</members>
         <members>TestInvoiceController</members>
         <members>TestLogoValidation</members>
         <members>TestLookUpController</members>
@@ -21,6 +26,7 @@
         <members>TestVATCalculation</members>
         <members>VATCalculation</members>
         <members>Wrapper</members>
+        <members>addDeleteController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -33,13 +39,19 @@
     </types>
     <types>
         <members>AccountWizardCmp</members>
+        <members>AddNewRowEvt</members>
         <members>CustomLoopkUp</members>
+        <members>DeleteRowEvt</members>
         <members>InvoiceLogoCmp</members>
         <members>InvoiceWizardCmp</members>
         <members>InvoiceWizardContainerCmp</members>
         <members>InvoiceWizardEvent</members>
+        <members>PreviewYourInvoiceCmp</members>
         <members>ProgressBarWizardCmp</members>
         <members>SellerWizardCmp</members>
+        <members>ServicesWizardCmp</members>
+        <members>dynamicRow</members>
+        <members>dynamicRowItem</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
@@ -52,18 +64,26 @@
     </types>
     <types>
         <members>Account_Wizard_Text</members>
+        <members>Add_Icon</members>
         <members>AmountInWords</members>
         <members>Authorized</members>
         <members>AuthorizedS</members>
+        <members>Back</members>
         <members>Bank_account</members>
         <members>Buyer</members>
+        <members>Confirm</members>
         <members>ConfirmationLabel</members>
         <members>Date_of_issue</members>
         <members>DeleteErrorLabel</members>
         <members>DeleteSuccessLabel</members>
+        <members>Delete_Icon</members>
         <members>Delivery_date</members>
         <members>Discount</members>
         <members>Due_date</members>
+        <members>EN_Name_of_Service</members>
+        <members>EN_Net_Price</members>
+        <members>EN_Quantity</members>
+        <members>EN_Unit</members>
         <members>ErrorLabel</members>
         <members>FileUploadLabel</members>
         <members>GrossAmount</members>
@@ -79,20 +99,37 @@
         <members>NetAmount</members>
         <members>NetDiscount</members>
         <members>Net_Amount</members>
+        <members>New</members>
+        <members>Next</members>
         <members>Paid</members>
         <members>Pay</members>
         <members>Payment</members>
         <members>Phone</members>
         <members>Place_of_Issue</members>
         <members>Quantity</members>
+        <members>Record_ID</members>
+        <members>S_NO</members>
         <members>Seller</members>
         <members>Seller_Wizard_Text</members>
+        <members>Services_Wizard_Text</members>
         <members>Signature</members>
         <members>Street</members>
         <members>SuccessLabel</members>
         <members>Total</members>
         <members>VAT</members>
         <members>VATAmount</members>
+        <members>W_Account_Toaster_Success</members>
+        <members>W_DynamicRow</members>
+        <members>W_DynamicRow_error</members>
+        <members>W_DynamicRow_required</members>
+        <members>W_DynamicRow_toaster_delete</members>
+        <members>W_DynamicRow_toaster_success</members>
+        <members>W_Invoice_toaster_success</members>
+        <members>W_Preview_add_service</members>
+        <members>W_Preview_error</members>
+        <members>W_Preview_error_Pdf</members>
+        <members>W_Preview_toaster_success</members>
+        <members>W_Seller_toaster_success</members>
         <members>Way_of_payment</members>
         <members>e_mail</members>
         <name>CustomLabel</name>
@@ -197,5 +234,5 @@
         <members>Invoice__c.Get_PDF</members>
         <name>WebLink</name>
     </types>
-    <version>45.0</version>
+    <version>46.0</version>
 </Package>

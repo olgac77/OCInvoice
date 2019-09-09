@@ -8,24 +8,27 @@
     <aura:attribute name="iconName" type="string" default="standard:drafts" description="complete icon name eg. standard:account" />
     <aura:attribute name="label" type="string" default="" description="Label will be displayed above input Box" />
     <aura:attribute name="placeholder" type="string" default="Search.." description="placeholder for input Box" />
-    <aura:attribute name="recordId" type="string"/>
+    <aura:attribute name="recordId" type="Id" default=""/>
     <aura:attribute name="disabledButton" type="boolean"/>
     <aura:attribute name="nextButton" type="boolean"/>
     <aura:attribute name="invoiceWizard" type="boolean"/>
-    <aura:attribute name="accountId" type="Id"/>
-    <aura:attribute name="sellerId" type="Id"/>
+    <aura:attribute name="accountId" type="Id" default=""/>
+    <aura:attribute name="sellerId" type="Id" default=""/>
     
     <!-- Internal Use Attributes -->
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <aura:handler name="change" value="{!v.recordId}" action="{!c.handleValueChange}"/>
     <aura:attribute name="searchString" type="string" default="" description="String to search"/>
     <aura:attribute name="selectedRecord" type="Object" default="" description="selected Record Details" />
     <aura:attribute name="recordsList" type="List" description="List of Records having data" access="private" />
     <aura:attribute name="message" type="String" default="" />
     
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.handleValueChange}"/>
+    
     <!-- Component Markup -->
-    <div class="slds-form-element">      
-        <label class="slds-form-element__label" for="combobox-id-1">{!if(v.label != '',v.label,v.fieldName)}</label>
+    <div class="slds-form-element">
+        <aura:renderIf isTrue="{!v.objectName != 'VAT__c'}">
+        	<label class="slds-form-element__label" for="combobox-id-1">{!if(v.label != '',v.label,v.fieldName)}</label>
+        </aura:renderIf>
         <div class="slds-form-element__control slds-p-bottom_small">
             <div class="slds-combobox_container ">
                 <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aura:id="resultsDiv" aria-expanded="true" aria-haspopup="listbox" role="combobox">

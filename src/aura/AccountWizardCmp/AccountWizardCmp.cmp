@@ -2,6 +2,7 @@
     <aura:attribute name="accountId" type="Id" default="null"/>
     <aura:attribute name="sellerId" type="Id" default = "null"/>
     <aura:attribute name="invoiceId" type="Id" default="null"/>
+    <aura:attribute name="serviceId" type="Id" default="null"/>
     <aura:attribute name="truthy" type="Boolean" default="false"/>    
     <aura:attribute name="Step" type="String" default="1"/>
     <aura:attribute name="disabledButton" type="Boolean" default="false"/>
@@ -36,7 +37,8 @@
                         <div class="slds-p-top_medium">
                             <c:CustomLoopkUp objectName="Account" fieldName="Name" label="Account Name" iconName="standard:account" 
                                              placeholder="Enter Value" recordId="{!v.accountId}" disabledButton="{!v.disabledButton}" nextButton="{!v.nextButton}"/>                      
-                            <aura:renderIf isTrue="{!not(empty(v.accountId))}">                      
+                            <aura:renderIf isTrue="{!not(empty(v.accountId))}"> 
+                                <div>
                                 <lightning:recordForm
                                                       recordId="{!v.accountId}"
                                                       objectApiName="Account"
@@ -44,6 +46,7 @@
                                                       layoutType="Compact"
                                                       columns="2"
                                                       mode="readonly" />
+                                </div>
                             </aura:renderIf>
                         </div>
                     </aura:set>

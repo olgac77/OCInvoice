@@ -5,6 +5,7 @@
 public with sharing class TestDataClass {
     public static final String userName = 'devkama23052019@test.com';
     public static final String fakeInvoiceNumber = 'FV/2019/01/01';
+    public static final String hoursUnit = 'Hours';
     
     public static List<Invoice__c> loadInvoices() {
         List<Account> acc = insertAccount();

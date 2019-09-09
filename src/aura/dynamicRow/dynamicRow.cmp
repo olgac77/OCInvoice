@@ -1,0 +1,45 @@
+<aura:component controller="addDeleteController" Implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="invoiceId" type="Id"/>
+    <aura:attribute name="nextButton" type="Boolean" default="True"/>
+    <aura:attribute name="serviceList" type="Service__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="DeleteRowEvt" event="c:DeleteRowEvt" action="{!c.removeDeletedRow}"/>
+    <aura:handler name="AddRowEvt" event="c:AddNewRowEvt" action="{!c.addNewRow}"/>
+    <aura:handler event="c:InvoiceWizardEvent" action="{!c.handleSteps}"/>
+    <aura:method name="Save" action="{!c.Save}" access="PUBLIC">        
+    </aura:method>
+    <lightning:notificationsLibrary aura:id="notifLib"/>    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer"> 
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate">{!$Label.c.S_NO}</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.EN_Name_of_Service}">{!$Label.c.EN_Name_of_Service}</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.EN_Quantity}">{!$Label.c.EN_Quantity}</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.EN_Unit}">{!$Label.c.EN_Unit}</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.EN_Net_Price}">{!$Label.c.EN_Net_Price}</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.VAT}">{!$Label.c.VAT}</div>
+                </th>
+            </tr>
+        </thead>   
+        <tbody>
+            <aura:iteration items="{!v.serviceList}" var="item" indexVar="index">
+                <c:dynamicRowItem ServiceInstance="{!item}" rowIndex="{!index}" />
+            </aura:iteration>
+        </tbody>
+    </table>
+    <br/>
+    <div class="slds-col slds-size_1-of-2 slds-medium-size_11-of-12 slds-large_size_11-of-12"></div>
+    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-12 slds-large_size_1-of-12 slds-p-top_medium">        
+    </div>
+</aura:component>

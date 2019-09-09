@@ -4,14 +4,17 @@
         $A.util.toggleClass(component.find('resultsDiv'),'slds-is-open');
         if( !$A.util.isEmpty(component.get('v.value')) ) {
             helper.searchRecordsHelper( component, event, helper, component.get('v.value') );
-        }        
+        }
+        if( !$A.util.isEmpty(component.get('v.recordId')) ){            
+            helper.searchRecordByIdHelper(component, event, helper, component.get('v.recordId') );                
+        }
     },
     handleValueChange: function (component,event,helper){
         if( !$A.util.isEmpty(component.get('v.recordId')) ){            
-            helper.searchRecordByIdHelper( component, event, helper, component.get('v.recordId') );                
-        }   
+            helper.searchRecordByIdHelper(component, event, helper, component.get('v.recordId') );                
+        }
     },
-    
+          
     searchRecords : function( component, event, helper ) {
         if( !$A.util.isEmpty(component.get('v.searchString')) ) {
             if(!$A.util.isEmpty(component.get('v.invoiceWizard'))){
