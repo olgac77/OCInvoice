@@ -7,13 +7,13 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <!-- Table Row -->   
     <tr class="slds-text-title_caps">
-        <td> 
-            {!v.rowIndex + 1}
+        <td class="slds-size_1-of-12"> 
+            <ui:outputText value="{!v.rowIndex + 1}"/>
         </td>
-        <td>
+        <td class="slds-size_2-of-12">
             <lightning:input name="{!v.ServiceInstance.Name_of_Service__c}" value="{!v.ServiceInstance.Name_of_Service__c}"/>
         </td>
-        <td>
+        <td class="slds-size_1-of-12">
             <lightning:input name="{!v.ServiceInstance.Quantity__c}" type="number" value="{!v.ServiceInstance.Quantity__c}"/>
         </td>
         <td class="slds-size_2-of-12">
@@ -24,13 +24,14 @@
                 </aura:iteration>
             </lightning:select>
         </td>
-        <td>
+        <td class="slds-size_2-of-12">
             <lightning:input name="{!v.ServiceInstance.Net_Price__c}" type="number" value="{!v.ServiceInstance.Net_Price__c}"/>
         </td>
-        <td>
+        <td class="slds-size_2-of-12">
+            <div class="slds-p-top_large"></div>
             <c:CustomLoopkUp aura:id="childQuestion" objectName="VAT__c" fieldName="Name" IconName="standard:account" recordId="{!v.ServiceInstance.VAT__c}"/>
         </td>
-        <td>
+        <td class="slds-size_1-of-12">
             <aura:if isTrue="{!v.rowIndex == 0}">
                 <a onclick="{!c.AddNewRow}">
                     <lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="small" alternativeText="add"/>

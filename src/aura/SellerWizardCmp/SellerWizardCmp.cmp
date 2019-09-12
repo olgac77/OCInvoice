@@ -41,14 +41,14 @@
                                              placeholder="Enter Value" recordId="{!v.sellerId}" disabledButton="{!v.disabledButton}" nextButton="{!v.nextButton}"/>                      
                             <aura:renderIf isTrue="{!not(empty(v.sellerId))}">
                                 <div>
-                                <lightning:recordForm
-                                                      recordId="{!v.sellerId}"
-                                                      objectApiName="Seller__c"
-                                                      fields="{!v.fields}"                                                
-                                                      layoutType="Compact"
-                                                      columns="2"
-                                                      mode="readonly" />
-                                    </div>
+                                    <lightning:recordForm
+                                                          recordId="{!v.sellerId}"
+                                                          objectApiName="Seller__c"
+                                                          fields="{!v.fields}"                                                
+                                                          layoutType="Compact"
+                                                          columns="2"
+                                                          mode="readonly" />
+                                </div>
                             </aura:renderIf>
                         </div>
                     </aura:set>
@@ -60,7 +60,7 @@
             </div>
             <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-12 slds-large_size_1-of-12">
                 <div class="slds-float_right">
-                	<lightning:button variant="brand" type="submit" name="save" label="{!$Label.c.Next}" disabled="{!v.nextButton}" onclick="{!c.handleNext}"/>
+                    <lightning:button variant="brand" type="submit" name="save" label="{!$Label.c.Next}" disabled="{!v.nextButton}" onclick="{!c.handleNext}"/>
                 </div>
             </div>
         </div>

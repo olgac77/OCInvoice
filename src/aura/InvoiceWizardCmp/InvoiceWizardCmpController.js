@@ -21,7 +21,7 @@
         component.find('notifLib').showToast({
             "variant": "success",
             "title": successInvoice,
-            "message":  recordIdLabel+" "+ event.getParam("Id")
+            "message":  recordIdLabel+" "+ event.getParams().response.id
         });
         component.set("v.invoiceId",event.getParams().response.id);
         component.set("v.nextButton",false);

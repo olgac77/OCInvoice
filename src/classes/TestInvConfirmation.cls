@@ -14,7 +14,7 @@ private class TestInvConfirmation {
         List<User> u = [SELECT Id FROM User WHERE Username = :TestDataClass.userName];
         List<Invoice__c> inv = [SELECT Id, Draft__c FROM Invoice__c LIMIT 1];
         List<Invoice__c> invAfter = new List<Invoice__c>();
-                
+        
         System.runAs(u.get(0)){
             Test.startTest();
             InvConfirmation.unmarkAsDraft(inv.get(0).Id);
@@ -27,10 +27,9 @@ private class TestInvConfirmation {
     
     @isTest
     static void testgetPDFURL(){
-         List<User> u = [SELECT Id FROM User WHERE Username = :TestDataClass.userName];
-         String url = '';
-		        
-                
+        List<User> u = [SELECT Id FROM User WHERE Username = :TestDataClass.userName];
+        String url = '';        
+        
         System.runAs(u.get(0)){
             Test.startTest();
             url = InvConfirmation.getPDFURL();

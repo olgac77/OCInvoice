@@ -386,6 +386,17 @@
         <label>All</label>
     </listViews>
     <listViews>
+        <fullName>Draft_Invoices</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Draft__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Draft Invoices</label>
+    </listViews>
+    <listViews>
         <fullName>My_Invoices</fullName>
         <columns>NAME</columns>
         <filterScope>Mine</filterScope>

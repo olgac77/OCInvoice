@@ -41,5 +41,22 @@ private class TestAddDeleteController {
             Test.stopTest();
         }
         System.assertEquals(true, ser.size()==1);
-    }     
+    } 
+
+	@isTest
+    static void TestSaveServices(){
+         List<User> u = [SELECT Id FROM User WHERE Username = :TestDataClass.userName];
+        List<Invoice__c> inv = [SELECT Id FROM Invoice__c LIMIT 1];
+        List<Service__c> ser = [SELECT Id,Name_of_Service__c FROM Service__c WHERE Invoice__c=:inv.get(0).Id];
+        List<Service__c>serAfter = new List<Service__c>();
+        System.runAs(u.get(0)){
+            Test.startTest();
+            ser.get(0).Name_of_Service__c = 'test';
+            addDeleteController.saveServices(ser);
+            serAfter = [SELECT Id,Name_of_Service__c FROM Service__c WHERE Invoice__c=:inv.get(0).Id];
+            Test.stopTest();
+        }
+        System.assertEquals('test', serAfter.get(0).Name_of_Service__c);
+        
+    }    
 }
