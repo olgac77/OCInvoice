@@ -32,8 +32,7 @@
                                                   onsuccess="{!c.handleSuccess}"
                                                   onerror="{!c.handleError}"
                                                   density="comfy"> 
-                            <lightning:messages />
-                            <lightning:inputField fieldName="Draft__c" />
+                            <lightning:messages />                            
                             <lightning:inputField fieldName="Invoice_Number__c" />
                             <div class="slds-grid">                              
                                 <div class="slds-col slds-size_1-of-2">
