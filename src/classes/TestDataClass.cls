@@ -74,7 +74,7 @@ public with sharing class TestDataClass {
     }
     
     public static List<Account> insertAccount(){
-        List<Account> acc = new List <Account> {new Account(Name = 'TestTest1', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542')};
+        List<Account> acc = new List <Account> {new Account(Name = 'TestTest1', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542', Email__c = 'olga.ciszek@pwc.com')};
             insert acc;
         return acc;
     }
