@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Invoice Reminder</name>
     <style>none</style>
-    <subject>Przypomnienie o nieopłaconej fakturze</subject>
+    <subject>{!$Label.Email_Reminder_Subject}</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -89,6 +89,11 @@
         <members>EN_Net_Price</members>
         <members>EN_Quantity</members>
         <members>EN_Unit</members>
+        <members>Email_Reminder_Body</members>
+        <members>Email_Reminder_Body2</members>
+        <members>Email_Reminder_Body3</members>
+        <members>Email_Reminder_Subject</members>
+        <members>Email_Salutation</members>
         <members>ErrorLabel</members>
         <members>FileUploadLabel</members>
         <members>GrossAmount</members>

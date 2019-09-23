@@ -1,5 +1,4 @@
-Szanowni Państwo,
+{!$Label.Email_Salutation},
 
-uprzejmie informujemy, iż do dnia dzisiejszego nie otrzymaliśmy zapłaty należności wynikających z następującej faktury:  {!Invoice__c.Invoice_Number__c} w wysokości {!Invoice__c.Gross_Total__c}.
-
-W związku z tym prosimy o uregulowanie w terminie 7 dni od dnia otrzymania niniejszej wiadomości wyżej wymienionej kwoty wraz z odsetkami za opóźnienie w płatności na rzecz {!Notify_Purchaser__c.Seller_Name__c}.
+{!$Label.Email_Reminder_Body} {!Invoice__c.Invoice_Number__c} {!$Label.Email_Reminder_Body2} {!Invoice__c.Gross_Total__c}.
+{!$Label.Email_Reminder_Body3} {!Notify_Purchaser__c.Seller_Name__c}.
