@@ -30,6 +30,10 @@
         <name>Due_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Email Sent --></label>
+        <name>Email_Sent__c</name>
+    </fields>
+    <fields>
         <label><!-- Gross Total --></label>
         <name>Gross_Total__c</name>
     </fields>

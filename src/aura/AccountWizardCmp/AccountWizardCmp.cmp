@@ -6,7 +6,7 @@
     <aura:attribute name="truthy" type="Boolean" default="false"/>    
     <aura:attribute name="Step" type="String" default="1"/>
     <aura:attribute name="disabledButton" type="Boolean" default="false"/>
-    <aura:attribute name="fields" type="String[]" default="['Name','NIP__c','BillingAddress', 'Phone']"/>
+    <aura:attribute name="fields" type="String[]" default="['Name','NIP__c','BillingAddress', 'Phone', 'Email__c']"/>
     <aura:attribute name="nextButton" type="Boolean" default="true"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:registerEvent name="onchange" type="c:InvoiceWizardEvent"/> 

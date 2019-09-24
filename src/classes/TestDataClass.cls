@@ -4,6 +4,7 @@
 @isTest
 public with sharing class TestDataClass {
     public static final String userName = 'devkama23052019@test.com';
+    public static final String userAdminName = 'devkon242365432547@test.com';
     public static final String fakeInvoiceNumber = 'FV/2019/01/01';
     public static final String hoursUnit = 'Hours';
     
@@ -54,13 +55,23 @@ public with sharing class TestDataClass {
     }
     
     public static List<User> insertUser() {
-        Profile p = [SELECT Id FROM Profile WHERE Name = 'OCInvoice User'];
+        Profile p = [SELECT Id FROM Profile WHERE Name = 'OCInvoice User'];       
         List<User> u = new List<User>{new User (Alias = 'newUser', Email = 'newuser@testorg.com',
                                                 EmailEncodingKey = 'UTF-8', LastName = 'Testing', LanguageLocaleKey = 'pl',
                                                 LocaleSidKey = 'pl_PL', ProfileId = p.Id,
-                                                TimeZoneSidKey = 'Europe/Prague', UserName = userName)};
+                                                TimeZoneSidKey = 'Europe/Prague', UserName = userName)};                                                    
                                                     insert u;
         return u;
+    }
+    
+    public static List <User> insertAdmin(){
+        Profile p = [SELECT Id FROM Profile WHERE Name = 'System Administrator'];
+        List<User> uAdmin = new List<User>{new User(Alias = 'newAdmin', Email = 'newuserAdmin@testorg.com',
+                                                    EmailEncodingKey = 'UTF-8', LastName = 'Testing', LanguageLocaleKey = 'pl',
+                                                    LocaleSidKey = 'pl_PL', ProfileId = p.Id,
+                                                    TimeZoneSidKey = 'Europe/Prague', UserName = userAdminName)};
+                                                        insert uAdmin;
+        return uAdmin;
     }
     
     public static ContentVersion insertContentVersion(){
@@ -74,7 +85,7 @@ public with sharing class TestDataClass {
     }
     
     public static List<Account> insertAccount(){
-        List<Account> acc = new List <Account> {new Account(Name = 'TestTest1', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542')};
+        List<Account> acc = new List <Account> {new Account(Name = 'TestTest1', NIP__c = '111-111-11-11', Phone = '123', BillingPostalCode = '12-542', Email__c = 'olga.ciszek@pwc.com')};
             insert acc;
         return acc;
     }

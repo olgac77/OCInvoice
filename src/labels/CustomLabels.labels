@@ -148,6 +148,41 @@
         <value>Unit</value>
     </labels>
     <labels>
+        <fullName>Email_Reminder_Body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Reminder Body</shortDescription>
+        <value>uprzejmie informujemy, iż do dnia dzisiejszego nie otrzymaliśmy zapłaty należności wynikających z następującej faktury:</value>
+    </labels>
+    <labels>
+        <fullName>Email_Reminder_Body2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Reminder Body2</shortDescription>
+        <value>w wysokości</value>
+    </labels>
+    <labels>
+        <fullName>Email_Reminder_Body3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Reminder Body3</shortDescription>
+        <value>W związku z tym prosimy o uregulowanie w terminie 7 dni od dnia otrzymania niniejszej wiadomości wyżej wymienionej kwoty wraz z odsetkami za opóźnienie w płatności na rzecz</value>
+    </labels>
+    <labels>
+        <fullName>Email_Reminder_Subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Reminder Subject</shortDescription>
+        <value>Przypomnienie o nieopłaconej fakturze</value>
+    </labels>
+    <labels>
+        <fullName>Email_Salutation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Salutation</shortDescription>
+        <value>Szanowni Państwo</value>
+    </labels>
+    <labels>
         <fullName>ErrorLabel</fullName>
         <language>en_US</language>
         <protected>true</protected>

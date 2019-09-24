@@ -10,6 +10,8 @@
         <members>LogoValidation</members>
         <members>NetCalculation</members>
         <members>OCInvoiceException</members>
+        <members>ReminderProcessor</members>
+        <members>ReminderProcessorScheduler</members>
         <members>ServiceTriggerHandler</members>
         <members>ServiceValidation</members>
         <members>TestAddDeleteController</members>
@@ -22,6 +24,8 @@
         <members>TestLogoValidation</members>
         <members>TestLookUpController</members>
         <members>TestNetCalculation</members>
+        <members>TestReminderProcessor</members>
+        <members>TestReminderProcessorScheduler</members>
         <members>TestServiceValidation</members>
         <members>TestVATCalculation</members>
         <members>VATCalculation</members>
@@ -59,6 +63,7 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>Account.Email__c</members>
         <members>Account.NIP__c</members>
         <name>CustomField</name>
     </types>
@@ -84,6 +89,11 @@
         <members>EN_Net_Price</members>
         <members>EN_Quantity</members>
         <members>EN_Unit</members>
+        <members>Email_Reminder_Body</members>
+        <members>Email_Reminder_Body2</members>
+        <members>Email_Reminder_Body3</members>
+        <members>Email_Reminder_Subject</members>
+        <members>Email_Salutation</members>
         <members>ErrorLabel</members>
         <members>FileUploadLabel</members>
         <members>GrossAmount</members>
@@ -147,6 +157,7 @@
         <members>Account</members>
         <members>Currency_Format__mdt</members>
         <members>Invoice__c</members>
+        <members>Notify_Purchaser__c</members>
         <members>Seller__c</members>
         <members>Service__c</members>
         <members>VAT__c</members>
@@ -171,15 +182,21 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>unfiled$public/Invoice_Reminder</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
         <members>OCInvoice_UtilityBar</members>
         <members>Seller</members>
         <name>FlexiPage</name>
     </types>
     <types>
+        <members>Notify_Purchaser</members>
         <members>Update_Invoice_Status</members>
         <name>Flow</name>
     </types>
     <types>
+        <members>Notify_Purchaser</members>
         <members>Update_Invoice_Status</members>
         <name>FlowDefinition</name>
     </types>
@@ -233,6 +250,14 @@
     <types>
         <members>Invoice__c.Get_PDF</members>
         <name>WebLink</name>
+    </types>
+    <types>
+        <members>Notify_Purchaser__c</members>
+        <name>Workflow</name>
+    </types>
+    <types>
+        <members>Notify_Purchaser__c.Notify_Purchaser</members>
+        <name>WorkflowAlert</name>
     </types>
     <version>46.0</version>
 </Package>

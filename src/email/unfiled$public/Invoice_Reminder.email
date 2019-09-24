@@ -1,0 +1,4 @@
+{!$Label.Email_Salutation},
+
+{!$Label.Email_Reminder_Body} {!Invoice__c.Invoice_Number__c} {!$Label.Email_Reminder_Body2} {!Invoice__c.Gross_Total__c}.
+{!$Label.Email_Reminder_Body3} {!Notify_Purchaser__c.Seller_Name__c}.

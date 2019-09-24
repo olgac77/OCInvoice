@@ -206,6 +206,15 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Email_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Email Sent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Gross_Total__c</fullName>
         <externalId>false</externalId>
         <label>Gross Total</label>
