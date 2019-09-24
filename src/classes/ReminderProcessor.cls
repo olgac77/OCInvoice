@@ -16,6 +16,7 @@ global class ReminderProcessor  implements Database.Batchable<sObject>, Database
         }
         insert nfList;        
     }
+
     global void finish(Database.BatchableContext bc){     
         system.debug(recordsProcessed+ ' records processed');       
     } 

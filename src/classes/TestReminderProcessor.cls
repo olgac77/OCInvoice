@@ -20,7 +20,6 @@ private class TestReminderProcessor {
             Id batchId = Database.executeBatch(rp);
             Test.stopTest();
         }        
-        
         System.assertEquals(1, [select count() from Notify_Purchaser__c]);
     }
 }
