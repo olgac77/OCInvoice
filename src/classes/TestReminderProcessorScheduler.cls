@@ -15,8 +15,9 @@ private class TestReminderProcessorScheduler {
     @isTest
     static void testReminderScheduler(){        
         List<AsyncApexJob> jobsBefore = [select Id, ApexClassID, ApexClass.Name, Status, JobType 
-                                         from AsyncApexJob WHERE ApexClass.Name = 'ReminderProcessorScheduler'];        
-   		System.assertEquals(0, jobsBefore.size());
+                                         from AsyncApexJob WHERE ApexClass.Name = 'ReminderProcessorScheduler'];    
+   		  System.assertEquals(0, jobsBefore.size());
+
         List<User> u = [SELECT Id from User WHERE userName = :TestDataClass.userAdminName];
         System.runAs(u.get(0)){        
             Test.startTest();
@@ -24,7 +25,8 @@ private class TestReminderProcessorScheduler {
             Test.stopTest();
         }
         List<AsyncApexJob> jobsScheduled = [select Id, ApexClassID, ApexClass.Name, Status, JobType 
-                                            from AsyncApexJob where JobType = 'ScheduledApex' and ApexClass.Name = 'ReminderProcessorScheduler'];
+                                            from AsyncApexJob where JobType = 'ScheduledApex' and ApexClass.Name = 'ReminderProcessorScheduler' ];
+
         System.assertEquals(0, jobsBefore.size());
         System.assertEquals('ReminderProcessorScheduler', jobsScheduled.get(0).ApexClass.Name);        
     }   

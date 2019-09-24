@@ -558,7 +558,7 @@
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.PHONE1</customTabListAdditionalFields>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>ListClean</excludedStandardButtons>        
+        <excludedStandardButtons>ListClean</excludedStandardButtons>
         <excludedStandardButtons>DiscoveryGetAccountsAction</excludedStandardButtons>
         <excludedStandardButtons>DataDotComGetAccountsMultiAddAction</excludedStandardButtons>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
