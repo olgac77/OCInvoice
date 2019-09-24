@@ -467,7 +467,7 @@
     <pageAccesses>
         <apexPage>Invoice</apexPage>
         <enabled>true</enabled>
-    </pageAccesses>    
+    </pageAccesses>   
     <tabVisibilities>
         <tab>Invoice__c</tab>
         <visibility>DefaultOn</visibility>
